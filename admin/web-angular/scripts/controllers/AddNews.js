@@ -1,5 +1,5 @@
 angular.module('sbAdminApp')
-  .controller('AddNews', function($scope,$position,$http,$timeout) {
+  .controller('AddNews', function($scope,$position,$http,$timeout, BASE_URL) {
 
 
   $scope.form = {};

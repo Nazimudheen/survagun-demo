@@ -28,7 +28,7 @@ $scope.totalItems = $scope.content.length;
 
 $http({
     method: 'DELETE',
-    url: BASE_URL+'articleDelete',
+    url: BASE_URL+'/articleDelete',
     data: {
         delete_id: id_for_index
     },
