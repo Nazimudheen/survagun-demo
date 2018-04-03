@@ -116,19 +116,60 @@ angular
 
 
       .state('article',{
+       controller: 'article',
         templateUrl:'views/article.html',
-        url:'/article'
-    })
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:['scripts/controllers/article.js']})
+          }
+        }
+      })
+
       .state('contact',{
        templateUrl:'views/contact.html',
        url:'/contact'
    })
      
 
-       .state('details',{
-       templateUrl:'views/details.html',
-       url:'/details'
-   })
+ 
+
+.state('deatils',{
+     url:'/deatils/:index/:image/:heading/:subheading/:description',
+
+          controller:'details',                                                                                            
+          templateUrl:'views/details.html',
+           resolve: {
+          loadMyFile:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+          files:['scripts/controllers/deatils.js'                
+                    ]})
+          }
+        }
+      })
+
+
+.state('deatils_article',{
+     url:'/article-details/:index/:image/:heading/:subheading/:description',
+
+          controller:'details_article',                                                                                            
+          templateUrl:'views/article-deatils.html',
+           resolve: {
+          loadMyFile:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+          files:['scripts/controllers/details-artilce.js'                
+                    ]})
+          }
+        }
+      })
+
+
+
+
+
        .state('dashboard.news',{
           controller:'News',                                                                                            
           templateUrl:'views/newslist.html',

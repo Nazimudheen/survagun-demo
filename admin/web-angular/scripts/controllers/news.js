@@ -8,8 +8,7 @@ $http.get(BASE_URL+"/newsget").then(function(response) {
 
 $scope.totalItems = $scope.content.length;
   $scope.currentPage = 1;
-  $scope.numPerPage = 4;
-  
+  $scope.numPerPage = 8;
   $scope.paginate = function(value) {
     var begin, end, index;
     begin = ($scope.currentPage - 1) * $scope.numPerPage;
@@ -48,14 +47,14 @@ $http({
           
    var myFish =$scope.content;
    function getObjIndex(id, arr){
-   	var index = -1;
-   	arr.forEach(function(obj, inx){
-   		if(obj["_id"] === id){
-   			index = inx;
-   			
-   		}
-   	})
-   		return index;
+    var index = -1;
+    arr.forEach(function(obj, inx){
+      if(obj["_id"] === id){
+        index = inx;
+        
+      }
+    })
+      return index;
    }
 
  myFish.splice(getObjIndex(id, myFish), 1);
@@ -88,7 +87,7 @@ $scope.description = description;
 
   $state.go('dashboard.editnews', { 'index': $scope.id, 'image': $scope.image,'heading': $scope.heading ,'subheading': $scope.subheading ,'description': $scope.description })
 
- 	}
+  }
 
 
 

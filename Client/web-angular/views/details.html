@@ -1,4 +1,4 @@
-<div class="baner-product">
+<div class="baner-product" ng-controller="details">
 	
 	<!--/banner-info-->
 	  <div class="header">
@@ -89,25 +89,17 @@
 		<div class="container-fluid">
 
 			<div class="col-md-9 col-sm-12">
-											<h3 class="heading-agileinfo-deatils-heading">What is the meaning of generic Medicines, and why are 
-they important. </h3>
+											<h3 class="heading-agileinfo-deatils-heading">{{heading}}</h3>
 
 			 <div class="col-sm-12 ">
 				  	
                             <div class="details-banner">
                             	
-                       <img src="images/makeIN.png" class="img-responsive">
+                       <img src="admin/Local_FS/news/{{img}}" class="img-responsive">
 
 
-                       <p>
-                       	
+                       <p>{{description}}</p>
 
-StayHappi has been formed to enhance the accessibility and availability of quality medicines at real value. It is a noble venture based on the strong belief of “Make in India” & 'Nation Always Comes First'. ​We are proud to serve the country for health and happiness of the people. Our mission is to setup highest number of retail pharmacies of quality medicines across India.
-
-
-                       </p>
-
-                       <p>StayHappi has been formed to enhance the accessibility and availability of quality medicines at real value. It is a noble venture based on the strong belief of “Make in India” & 'Nation Always Comes First'. ​We are proud to serve the country for health and happiness of the people. Our mission is to setup highest number of retail pharmacies of quality medicines across India.</p>
 
 
                             </div>
@@ -120,25 +112,14 @@ StayHappi has been formed to enhance the accessibility and availability of quali
           <div class="latest">
             <div class="lates-post">Latest Post</div>
 
-<div class="media">
-  <a ui-sref="details">	  <div class="media-left media-top">
-      <img src="images/img2.png" class="media-object" style="width:80px">
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading">Media Top</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-     
-    </div></a>
-  </div>
-  <hr>
 
-<div class="media">
-   <a ui-sref="details">	 <div class="media-left media-top">
-      <img src="images/img2.png" class="media-object" style="width:80px">
+  <div class="media" ng-repeat="y in content | limitTo:5 | orderBy:'+':true">
+  <a ng-click="edit(y._id,y.Image,y.heading,y.subheading,y.description)">	  <div class="media-left media-top">
+      <img src="admin/Local_FS/news/{{y.Image}}" class="media-object" style="width:80px">
     </div>
     <div class="media-body">
-      <h4 class="media-heading">Media Top</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <h4 class="media-heading">{{y.heading}}</h4>
+      <p>{{y.subheading}}</p>
      
     </div></a>
   </div>
@@ -146,70 +127,6 @@ StayHappi has been formed to enhance the accessibility and availability of quali
 
 
 
-
-<div class="media">
-    <a ui-sref="details">	<div class="media-left media-top">
-      <img src="images/img2.png" class="media-object" style="width:80px">
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading">Media Top</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-     
-    </div></a>
-  </div>
-  <hr>
-
-
-<div class="media">
-  <a ui-sref="details">	  <div class="media-left media-top">
-      <img src="images/img2.png" class="media-object" style="width:80px">
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading">Media Top</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-     
-    </div></a>
-  </div>
-  <hr>
-
-
-<div class="media">
-  <a ui-sref="details">	  <div class="media-left media-top">
-      <img src="images/img2.png" class="media-object" style="width:80px">
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading">Media Top</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-     
-    </div></a>
-  </div>
-  <hr>
-
-<div class="media">
-   <a ui-sref="details">	 <div class="media-left media-top">
-      <img src="images/img2.png" class="media-object" style="width:80px">
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading">Media Top</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-     
-    </div></a>
-  </div>
-  <hr>
-
-
-
-<div class="media">
-   <a ui-sref="details">	 <div class="media-left media-top">
-      <img src="images/img2.png" class="media-object" style="width:80px">
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading">Media Top</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-     
-    </div></a>
-  </div>
-  <hr>
 
 
          </div>  
