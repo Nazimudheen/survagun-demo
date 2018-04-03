@@ -20,7 +20,7 @@ if ($scope.Image) {
     payload.append("subheading", $scope.subheading);
 
         payload.append("description", $scope.description);
-        $http({ url :'http://localhost:7000/news',
+        $http({ url :BASE_URL+'/news',
         		data :  payload,
         		method : 'POST',
                 headers: {

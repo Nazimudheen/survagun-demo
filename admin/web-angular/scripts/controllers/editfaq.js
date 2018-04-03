@@ -35,7 +35,7 @@ $scope.save = function() {
 
 $http({
         method: 'PUT',
-        url: 'http://localhost:7000/faqedit',
+        url: BASE_URL+'/faqedit',
         data: payload,
         headers: {
                     'Content-type': undefined

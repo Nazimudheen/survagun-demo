@@ -34,12 +34,7 @@ module.exports = function(app) {
               app.delete('/articleDelete', multipartMiddleware,article.articleDelete);
               app.put('/articleedit',multipartMiddleware,article.article_edit);
 
-              app.post('/login',function(req, res){
-                      res.json({
-                            print: "sucsess",
-                            value : "abxc"
-                     })
-              });
+              app.post('/login',user.login);
 
               // app.post('/apilogin',multipartMiddleware,user.apiPOST);
 

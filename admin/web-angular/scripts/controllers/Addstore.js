@@ -1,5 +1,5 @@
 angular.module('sbAdminApp')
-  .controller('Addstore', function($scope,$position,$http,$timeout) {
+  .controller('Addstore', function($scope,$position,$http,$timeout, BASE_URL) {
 
 
   $scope.form = {};
@@ -27,7 +27,7 @@ if ($scope.Image) {
 
 
 
-        $http({ url :'http://localhost:7000/store',
+        $http({ url :BASE_URL+'/store',
         		data :  payload,
         		method : 'POST',
                 headers: {

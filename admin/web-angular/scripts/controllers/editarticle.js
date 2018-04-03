@@ -1,5 +1,5 @@
 angular.module('sbAdminApp')
-  .controller('editarticle', function($scope,$position,$http,$state,$stateParams,$timeout) {
+  .controller('editarticle', function($scope,$position,$http,$state,$stateParams,$timeout, BASE_URL) {
 
 
 
@@ -43,7 +43,7 @@ $scope.save = function() {
 
 $http({
         method: 'PUT',
-        url: 'http://localhost:7000/articleedit',
+        url: BASE_URL+'/articleedit',
         data: payload,
         headers: {
                     'Content-type': undefined

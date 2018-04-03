@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt');
 var Schema = mongoose.Schema;
 var UserSchema = new Schema({
   username: {
@@ -15,5 +16,11 @@ var UserSchema = new Schema({
     type: String,
     Required:{type: Date, default: Date.now}  
   },
+});
+
+UserSchema.pre('save' , function (next) {
+  console.log("here")
+  currUser = this;
+  
 });
 module.exports = mongoose.model('Users', UserSchema);

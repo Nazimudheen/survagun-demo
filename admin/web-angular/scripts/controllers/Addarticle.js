@@ -1,5 +1,5 @@
 angular.module('sbAdminApp')
-  .controller('Addarticle', function($scope,$position,$http,$timeout) {
+  .controller('Addarticle', function($scope,$position,$http,$timeout, BASE_URL) {
 
   $scope.form = {};
 
@@ -23,7 +23,7 @@ if ($scope.Image) {
 
           payload.append("description", $scope.description);
 
-        $http({ url :'http://localhost:7000/article',
+        $http({ url :BASE_URL+'/article',
         		data :  payload,
         		method : 'POST',
                 headers: {

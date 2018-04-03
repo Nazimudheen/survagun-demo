@@ -1,8 +1,8 @@
 angular.module('sbAdminApp')
-  .controller('Faq', function($scope,$position,$http,$state,$timeout) {
+  .controller('Faq', function($scope,$position,$http,$state,$timeout, BASE_URL) {
 
 
-$http.get("http://localhost:7000/faqget").then(function(response) {
+$http.get(BASE_URL+"/faqget").then(function(response) {
       $scope.content = response.data;
 
 
@@ -28,7 +28,7 @@ $scope.totalItems = $scope.content.length;
 
 $http({
     method: 'DELETE',
-    url: 'http://localhost:7000/faqDelete',
+    url: BASE_URL+'/faqDelete',
     data: {
         delete_id: id_for_index
     },

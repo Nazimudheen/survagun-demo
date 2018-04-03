@@ -1,5 +1,6 @@
   var express = require('express'),
   app = express(),
+  passport = require('passport'),
   port = process.env.PORT || 7000,
   mongoose = require('mongoose'),
    News = require('./admin/model/newsmodel'),
@@ -13,23 +14,64 @@
 
 var multer = require('multer');
 var cors = require('cors');
-
+var user = require('./admin/model/usersmodel');
 app.use(cors());
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/admin');
 
+var bcrypt = require('bcrypt');
+var jwt = require('jsonwebtoken');
+
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.use(passport.initialize());
+require('./admin/authentication/Passport')(passport);
+app.get('/getCurrentUser', function (req, res, next) {
+  passport.authenticate('jwt', {session : false}, function(err, user, info) {
+      if (err) {
+          res.status(500);
+          res.json({msg : "Internal server Error"});
+      }
+      else if (!user) {
+          res.status(400);
+          res.json({msg : "Invalid token"});
+      } else{
+          req.user = user;
+          next();
+      }
+  })(req, res, next);
+},function(req,res){
+  res.json({msg : "OK"})
+});
+
+
 routes(app);
 
-
-
-
-
-
-
+var args = process.argv;
+if(args[args.length-3] === 'INIT_CLIENT'){
+    user.findOne({username : args[args.length - 2]}, function(err, user){
+      if(err){
+        console.log(err);
+        process.exit();
+      } else if(user){
+        console.log("This account already exists");
+        process.exit();
+      } else{
+        bcrypt.hash(args[args.length-1],10,function (err, hash) {
+          var newUser = new User({
+            username :  args[args.length-2],
+            password: hash
+          });
+            newUser.save(function(err, user){
+              console.log("account for user " + args[args.length-2]+" has been created"); 
+              process.exit();  
+          })
+        })
+      }
+    })
+}
 
 
 

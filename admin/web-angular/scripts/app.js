@@ -5,24 +5,40 @@ angular
     'ui.router',
     'ui.bootstrap',
     'angular-loading-bar','ngRoute','ngResource',
-  ]).constant('BASE_URL', 'http://localhost:3000/API')
+  ]).constant('BASE_URL', 'http://localhost:7000')
 
-.run(function($http,$rootScope)
+.run(function($http,$rootScope,$window,BASE_URL,$state)
 {
-    if(sessionStorage.length > 0){
-        $rootScope.current_user = sessionStorage.current_user;
-        $rootScope.authenticated = true;
-    }else{
-        $rootScope.authenticated = false;
-        $rootScope.current_user = 'Guest';
-    }
+    // if(sessionStorage.length > 0){
+    //     $rootScope.current_user = sessionStorage.current_user;
+    //     $rootScope.authenticated = true;
+    // }else{
+    //     $rootScope.authenticated = false;
+    //     $rootScope.current_user = 'Guest';
+    // }
     
     $rootScope.signout = function(){
-        $http.get('auth/signout');
-        $rootScope.authenticated = false;
-        $rootScope.current_user = 'Guest';
-        sessionStorage.clear();
+      $window.localStorage.clear();
+      $state.go('login')
     };
+
+    var token = $window.localStorage.getItem("token");
+    console.log("here!");
+    console.log(token);
+    $http({
+        url: BASE_URL + '/getCurrentUser',
+        method: 'GET',
+        headers: {
+          'Authorization': token
+        }
+    }).then(function(response){
+      if(response.data.msg === 'OK'){
+        //valid user
+      } else{
+        $window.localStorage.clear();
+        $state.go('login')
+      }
+    }, function(){})
 
 })
   .config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider',function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider) {

@@ -6,7 +6,7 @@
 var bCrypt = require('bcrypt-nodejs');
  var userCtrl = {};
 
-userCtrl.findByUsername = function(req, res){
+userCtrl.login = function(req, res){
 
   console.log(req.body.password);
         var password = req.param("password");
@@ -14,7 +14,7 @@ userCtrl.findByUsername = function(req, res){
       var username = req.param("username");
       console.log(username);
 
-User.findOne({password:password}, function(err, user){
+User.findOne({username:username}, function(err, user){
 
 
 if(err){

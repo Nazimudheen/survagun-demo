@@ -1,5 +1,5 @@
 angular.module('sbAdminApp')
-  .controller('Addfaq', function($scope,$position,$http,$timeout) {
+  .controller('Addfaq', function($scope,$position,$http,$timeout, BASE_URL) {
 
 
   $scope.form = {};
@@ -19,7 +19,7 @@ angular.module('sbAdminApp')
 
 
          { 
-        $http({ url :'http://localhost:7000/faq',
+        $http({ url :BASE_URL+'/faq',
         		data :  payload,
         		method : 'POST',
                 headers: {

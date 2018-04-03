@@ -4,42 +4,43 @@ var mongoose = require('mongoose');
 var User = require('../model/usersmodel');
 // var LocalStrategy = require('passport-local').Strategy;
 // var bCrypt = require('bcrypt-nodejs');
+var jwt = require('jsonwebtoken');
+var bcrypt = require('bcrypt');
 var userCtrl = {};
-userCtrl.findByUsername = function(req, res) {
-    console.log("Here!");
-    console.log(req.body.password);
-    var password = req.param("password");
-
-    var username = req.param("username");
-    console.log(username);
+userCtrl.login = function(req, res) {
 
     User.findOne({
-        password: password
+        username: req.body.username
     }, function(err, user) {
-
-
         if (err) {
             console.log(err);
         }
 
         if (user) {
-            console.log('Is defined');
-            console.log(user);
-
-            res.json({
-                print: "sucsess"
+            bcrypt.compare(req.body.password, user.password, function (err, result) {
+                if(err){
+                    res.status = 500;
+                    res.json({msg : "Internal server error"})
+                }
+                if(result === true){
+                    var token = jwt.sign({id : user._id}, "sampleSecret" ,{expiresIn: 10000});
+                    res.json({
+                        msg : "OK",
+                        user : user,
+                        token: 'JWT ' + token
+                     });
+                } else {
+                    res.status = 400;
+                    res.json({
+                        msg : "Invalid password"
+                    })
+                }
             })
-
-
         } else {
-
+            res.status = 400;
             res.json({
-                print: null
+                msg : "Invalid Email"
             })
-
-            console.log('not defined');
-
-
         }
     })
 }

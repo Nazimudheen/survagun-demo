@@ -1,5 +1,5 @@
 angular.module('sbAdminApp')
-  .controller('editstore', function($scope,$position,$http,$state,$stateParams,$timeout) {
+  .controller('editstore', function($scope,$position,$http,$state,$stateParams,$timeout, BASE_URL) {
 
 
 
@@ -47,7 +47,7 @@ $scope.save = function() {
 
 $http({
         method: 'PUT',
-        url: 'http://localhost:7000/storeedit',
+        url: BASE_URL+'/storeedit',
         data: payload,
         headers: {
                     'Content-type': undefined
