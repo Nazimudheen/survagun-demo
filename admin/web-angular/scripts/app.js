@@ -5,7 +5,7 @@ angular
     'ui.router',
     'ui.bootstrap',
     'angular-loading-bar','ngRoute','ngResource',
-  ]).constant('BASE_URL', 'http://localhost:7000')
+  ]).constant('BASE_URL', 'http://localhost:7000/API')
 
 .run(function($http,$rootScope,$window,BASE_URL,$state)
 {

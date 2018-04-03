@@ -12,29 +12,29 @@ var multipartMiddleware = multipart();
 module.exports = function(app) {
 
             
-              app.get('/newsget',news.list_all_);
-              app.post('/news', multipartMiddleware,news.apiPOST);
-              app.delete('/newsDelete', multipartMiddleware,news.newsDelete);
-              app.put('/newsedit',multipartMiddleware,news.news_edit);
+              app.get('/API/newsget',news.list_all_);
+              app.post('/API/news', multipartMiddleware,news.apiPOST);
+              app.delete('/API/newsDelete', multipartMiddleware,news.newsDelete);
+              app.put('/API/newsedit',multipartMiddleware,news.news_edit);
 
-              app.post('/store', multipartMiddleware,store.apiPOST);
-              app.get('/storeget',store.list_all_); 
-              app.delete('/storeDelete', multipartMiddleware,store.storeDelete);
-              app.put('/storeedit',multipartMiddleware,store.store_edit);
+              app.post('/API/store', multipartMiddleware,store.apiPOST);
+              app.get('/API/storeget',store.list_all_); 
+              app.delete('/API/storeDelete', multipartMiddleware,store.storeDelete);
+              app.put('/API/storeedit',multipartMiddleware,store.store_edit);
 
-              app.post('/faq', multipartMiddleware,faq.apiPOST);
-              app.get('/faqget',faq.list_all_); 
-              app.delete('/faqDelete', multipartMiddleware,faq.faqDelete);
-              app.put('/faqedit',multipartMiddleware,faq.faq_edit);
+              app.post('/API/faq', multipartMiddleware,faq.apiPOST);
+              app.get('/API/faqget',faq.list_all_); 
+              app.delete('/API/faqDelete', multipartMiddleware,faq.faqDelete);
+              app.put('/API/faqedit',multipartMiddleware,faq.faq_edit);
 
 
 
-              app.get('/articleget',article.list_all_);
-              app.post('/article', multipartMiddleware,article.apiPOST);
-              app.delete('/articleDelete', multipartMiddleware,article.articleDelete);
-              app.put('/articleedit',multipartMiddleware,article.article_edit);
+              app.get('/API/articleget',article.list_all_);
+              app.post('/API/article', multipartMiddleware,article.apiPOST);
+              app.delete('/API/articleDelete', multipartMiddleware,article.articleDelete);
+              app.put('/API/articleedit',multipartMiddleware,article.article_edit);
 
-              app.post('/login',user.login);
+              app.post('/API/login',user.login);
 
               // app.post('/apilogin',multipartMiddleware,user.apiPOST);
 

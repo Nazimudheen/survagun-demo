@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(passport.initialize());
 require('./admin/authentication/Passport')(passport);
-app.get('/getCurrentUser', function (req, res, next) {
+app.get('/API/getCurrentUser', function (req, res, next) {
   passport.authenticate('jwt', {session : false}, function(err, user, info) {
       if (err) {
           res.status(500);
@@ -40,6 +40,7 @@ app.get('/getCurrentUser', function (req, res, next) {
       } else{
           req.user = user;
           next();
+
       }
   })(req, res, next);
 },function(req,res){
@@ -48,6 +49,23 @@ app.get('/getCurrentUser', function (req, res, next) {
 
 
 routes(app);
+
+app.use("/",express.static("Client/web-angular"));
+
+app.use("/admin",express.static("admin/web-angular"));
+
+app.get("/admin/*", function (req,res) {
+  res.sendFile("admin/web-angular/index.html" , {root : __dirname});
+})
+
+app.get("/admin", function (req,res) {
+  res.sendFile("admin/web-angular/index.html" , {root : __dirname});
+})
+
+app.get("*", function (req,res) {
+  res.sendFile("Client/web-angular/index.html" , {root : __dirname});
+})
+
 
 var args = process.argv;
 if(args[args.length-3] === 'INIT_CLIENT'){
