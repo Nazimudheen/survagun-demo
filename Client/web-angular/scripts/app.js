@@ -5,7 +5,7 @@ angular
     'ui.router',
     'ui.bootstrap',
     'angular-loading-bar',
-  ]).constant('BASE_URL', 'http://localhost:7000')
+  ]).constant('BASE_URL', '/API')
   .config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider',function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider) {
     
     $ocLazyLoadProvider.config({
