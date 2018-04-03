@@ -1,0 +1,51 @@
+<div class="container" >
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading" style=" background: #063f88 !important; ">
+   <img src="styles/image/logo.png" class="img-responsive" style="
+
+    width: 250px;
+    height: 80px;
+    margin: 0px 60px;
+">                </div>
+                <div class="panel-body" >
+                    
+
+
+
+
+
+<form class="form-auth" ng-submit="login()">
+  <fieldset>
+                            <div class="form-group">
+    <p class="text-warning" style="color: red; margin: 0px auto;">{{error_message}}</p>
+</div>
+                            <div class="form-group">
+
+    <input type="username" ng-model="user.username" placeholder="Username" class="form-control" required><br>
+</div>
+    <input type="password" ng-model="user.password" placeholder="Password" class="form-control" required><br>
+                                <div class="form-group">
+
+    <input type="submit" value="Log in" class="btn btn-lg btn-success btn-block" />
+</div>
+</form>
+
+
+
+
+
+
+
+</fieldset>
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,121 @@
+<div class="row" ng-controller="editstore">
+    <div class="col-lg-12">
+        <h1 class="page-header">     
+
+
+                 EDIT STORE
+           </h1>
+    </div>  
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div class="alert alert-info alert-dismissable col-sm-12" ng-show="successMessage"   style=" position: fixed; right: 28px; 
+       opacity: .99; width: 500px;  background-color: #56a9f1 !important;
+ " >
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                           <p style="color: #fff;">  {{successMessage }}</p> <a href="#" class="alert-link"></a>
+                            </div>
+                        <form role="form" enctype="multipart/form-data" name="myForm">
+                            <div class="form-group col-lg-6 col-sm-12">
+
+                                  <div class="form-group">
+                                <label>Image</label>
+                                <input type="file" file-model="Image" name="Image" my-directive required d="trigger"  onchange="angular.element(this).scope().setFile(this)" accept="image/*" >
+<label ng-show="myForm.Image.$error.validFile">
+
+<label ng-show="myForm.Image.$error.validFile" style="color:red">File is required</label>
+
+
+                            </div>  
+                                <label>Location (Google API Link)</label>
+                                <input class="form-control" placeholder="Location" name="location" ng-model="location" required>
+
+<span style="color:red" ng-show="myForm.location.$dirty && myForm.location.$invalid">
+<span ng-show="myForm.location.$error.required">Location is required.</span>
+
+                            </div>
+                            <div class="form-group col-lg-6 col-sm-12">
+                                <label>Email</label>
+                                <input class="form-control" placeholder="Emailng" name="email" ng-model="email" required>
+
+<span style="color:red" ng-show="myForm.Email.$dirty && myForm.Email.$invalid">
+<span ng-show="myForm.subheading.$error.required">Email is required.</span>
+
+
+                            </div>
+                             <div class="form-group col-lg-6 col-sm-12">
+                                <label>Phone Number</label>
+                                <input class="form-control" placeholder="Phone Number" name="phone" ng-model="phone" required>
+
+<span style="color:red" ng-show="myForm.phone.$dirty && myForm.phone.$invalid">
+<span ng-show="myForm.phone.$error.required">Phone is required.</span>
+
+
+                            </div>
+                        
+                            <div class="form-group">
+                                <label>Address</label>
+    <textarea id="txtEditor" class="form-control" rows="3" placeholder="Enter Description" ng-model="address" name="address">{{address}}</textarea>
+    <span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid">
+<span ng-show="myForm.address.$error.required">Address is required.</span>
+                            </div>
+                           
+                            <div class="form-group">
+                                <label>Regional Office Address</label>
+    <textarea id="txtEditor" class="form-control" rows="3" placeholder="Enter Description" name="re_address" ng-model="re_address">{{re_address}}}</textarea>
+
+       <span style="color:red" ng-show="myForm.r_description.$dirty && myForm.r_description.$invalid">
+<span ng-show="myForm.r_description.$error.required">Regional Office Address is required.</span>
+                            </div>
+
+
+
+   <div class="col-lg-12 col-sm-12">
+    <div class="col-lg-6 col-sm-6">
+                    <div class="panel panel-primary" style="margin: 20px 0px;">
+                        <div class="panel-heading">
+
+Preview image               </div>
+
+
+                        <div class="panel-body" >
+                                        <img ng-src="{{urlImg}}" class=" img-responsive"  style="width:450px; height: 350px; margin: auto 0px;">
+
+                        </div>
+                        <div class="panel-footer">
+                        </div>
+                    </div>
+                </div>
+</div> 
+</div>
+
+
+
+
+                          
+                            <button   type="submit" ng-click="save()" class="btn btn-default">Submit</button>
+
+                        </form>
+
+                    </div>
+                    
+                   
+                    <!-- /.col-lg-6 (nested) -->
+                </div>
+                <!-- /.row (nested) -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
