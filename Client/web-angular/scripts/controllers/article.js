@@ -1,8 +1,8 @@
 angular.module('sbAdminApp')
-  .controller('News', function($scope,$position,$http,$state,$timeout) {
+  .controller('article', function($scope,$position,$http,$state,$timeout) {
 
   
-$http.get("http://localhost:7000/newsget").then(function(response) {
+$http.get("http://localhost:7000/articleget").then(function(response) {
       $scope.content = response.data;
 
 
@@ -35,7 +35,7 @@ $scope.subheading = subheading;
 
 $scope.description = description;
 
-  $state.go('deatils', { 'index': $scope.id, 'image': $scope.image,'heading': $scope.heading ,'subheading': $scope.subheading ,'description': $scope.description })
+  $state.go('deatils_article', { 'index': $scope.id, 'image': $scope.image,'heading': $scope.heading ,'subheading': $scope.subheading ,'description': $scope.description })
 
  	}
 

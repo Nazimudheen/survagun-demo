@@ -3,7 +3,7 @@
  var mongoose = require('mongoose'),
  Article = mongoose.model('Article');
  var fs = require('fs-extra');
- const BASE_DIR = 'Local_FS/article';
+ const BASE_DIR = 'admin/web-angular/Local_FS/article';
 
 
 

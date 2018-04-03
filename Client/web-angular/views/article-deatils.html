@@ -1,5 +1,4 @@
-<!--/main-header-->
-<div class="baner-product" ng-controller="article">
+<div class="baner-product" ng-controller="details_article">
 	
 	<!--/banner-info-->
 	  <div class="header">
@@ -52,7 +51,8 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav ">
 
-						 <li class="active"><a ui-sref="home">Home</a></li>
+					
+					 <li class="active"><a ui-sref="home">Home</a></li>
                         <li><a   ui-sref="aboutus">About Us</a></li>
                         <li><a   ui-sref="product">Our Products</a></li>
                         <li><a   ui-sref="quality">Our Quality</a></li>
@@ -60,16 +60,6 @@
                         <li><a   ui-sref="article">Article</a></li>
                         <li><a   ui-sref="news">Updates</a></li>
                         <li><a   ui-sref="contact">Contact Us</a></li>
-
-<!-- <li><a href="about.html">About Us</a></li>
-						<li><a href="product.html">Our Products</a></li>
-						<li><a href="gallery.html">Our Quality</a></li>
-					    <li><a href="gallery.html">Partner With Us</a></li>
-					    <li><a href="gallery.html">Article</a></li>
-					   	<li><a href="news.html">Updates</a></li>
-						<li><a href="contact.html">Contact Us</a></li> -->
-
-					</ul>
 				</div>
 			
 			</div>
@@ -78,10 +68,12 @@
 		</div>
 	  </div>
 		<div class="w3-banner-head-info">
-
-				<div class="container-fluid">
-				<h3 class="heading-agileinfo-news">Article <span></span></h3>
-
+				<div class="container">
+				   <div class="banner-text">
+						<!-- <h2>Take Care of Your Nails
+                         <span>Paint Them Color Awesome!</span></h2>
+					 -->
+					</div>
 
 
 				</div>
@@ -96,36 +88,32 @@
 
 		<div class="container-fluid">
 
-			<div class="col-md-9">
+			<div class="col-md-9 col-sm-12">
+											<h3 class="heading-agileinfo-deatils-heading">{{heading}}</h3>
 
-			<div class="agileinfo-top-grids">
-				<div class="col-sm-3 wthree-top-grid op" ng-repeat="x in content | filter:paginate">
-				<a ui-sref="details">	<img src="admin/Local_FS/article/{{x.Image}}" class="img-responsive image-grid image" alt="" />
-                   <div class="overlay">
-                       <div class="text"><i class="fa fa-plus-square"></i></div>
-                   </div>
-					<h4>{{x.heading}}</h4>
-<!-- 					<p>Pellentesque auctor euismod lectus a pretium..</p>
- -->					</a>
-				</div>
-				
-				<div class="col-sm-12">
-                  <nav>
-						<pagination total-items="totalItems" ng-model="currentPage"
-          max-size="5" boundary-links="true"
-          items-per-page="numPerPage" class="pagination-sm">
-        </pagination>
-					</nav>
-        </div>
+			 <div class="col-sm-12 ">
+				  	
+                            <div class="details-banner">
+                            	
+                       <img src="admin/Local_FS/article/{{img}}" class="img-responsive">
 
-				<div class="clearfix"> </div>
-			</div>
-			</div>
+
+                       <p>{{description}}</p>
+
+
+
+                            </div>
+
+
+				  </div>
+		</div>
+
      <div class="col-md-3">
           <div class="latest">
             <div class="lates-post">Latest Post</div>
 
-<div class="media" ng-repeat="y in content | limitTo:5 | orderBy:'+':true">
+
+  <div class="media" ng-repeat="y in content | limitTo:5 | orderBy:'+':true">
   <a ng-click="edit(y._id,y.Image,y.heading,y.subheading,y.description)">	  <div class="media-left media-top">
       <img src="admin/Local_FS/article/{{y.Image}}" class="media-object" style="width:80px">
     </div>
@@ -136,6 +124,9 @@
     </div></a>
   </div>
   <hr>
+
+
+
 
 
          </div>  
@@ -215,3 +206,4 @@
 					</div>
 		</div>
 	</div>
+	<!-- //footer -->

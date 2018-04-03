@@ -80,7 +80,7 @@
 		<div class="w3-banner-head-info">
 
 				<div class="container-fluid">
-																				<h3 class="heading-agileinfo-news">News {{nasim}}<span></span></h3>
+																				<h3 class="heading-agileinfo-news">News <span></span></h3>
 
 
 
@@ -116,7 +116,7 @@
           items-per-page="numPerPage" class="pagination-sm">
         </pagination>
 					</nav>
-</div>
+        </div>
 
 				<div class="clearfix"> </div>
 			</div>
@@ -125,46 +125,17 @@
           <div class="latest">
             <div class="lates-post">Latest Post</div>
 
-<div class="media">
-  <a ui-sref="details">	  <div class="media-left media-top">
-      <img src="images/img2.png" class="media-object" style="width:80px">
+<div class="media" ng-repeat="y in content | limitTo:5 | orderBy:'+':true">
+  <a ng-click="edit(y._id,y.Image,y.heading,y.subheading,y.description)">	  <div class="media-left media-top">
+      <img src="admin/Local_FS/news/{{y.Image}}" class="media-object" style="width:80px">
     </div>
     <div class="media-body">
-      <h4 class="media-heading">Media Top</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <h4 class="media-heading">{{y.heading}}</h4>
+      <p>{{y.subheading}}</p>
      
     </div></a>
   </div>
   <hr>
-
-<div class="media">
-   <a ui-sref="details">	 <div class="media-left media-top">
-      <img src="images/img2.png" class="media-object" style="width:80px">
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading">Media Top</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-     
-    </div></a>
-  </div>
-  <hr>
-
-
-
-
-<div class="media">
-    <a ui-sref="details">	<div class="media-left media-top">
-      <img src="images/img2.png" class="media-object" style="width:80px">
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading">Media Top</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-     
-    </div></a>
-  </div>
-  <hr>
-
-
 
 
          </div>  
