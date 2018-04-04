@@ -1,8 +1,8 @@
 angular.module('sbAdminApp')
-  .controller('article', function($scope,$position,$http,$state,$timeout) {
+  .controller('article', function($scope,$position,$http,$state,$timeout,BASE_URL) {
 
-  
-$http.get("http://localhost:7000/articleget").then(function(response) {
+  console.log(BASE_URL);
+$http.get(BASE_URL+"/articleget").then(function(response) {
       $scope.content = response.data;
 
 

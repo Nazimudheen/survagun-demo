@@ -1,5 +1,5 @@
 angular.module('sbAdminApp')
-  .controller('details', function($scope,$position,$http,$state,$stateParams,$timeout) {
+  .controller('details', function($scope,$position,$http,$state,$stateParams,$timeout, BASE_URL) {
 
 
 
@@ -17,7 +17,7 @@ $scope.description = $stateParams.description;
 
 
 
-$http.get("http://localhost:7000/newsget").then(function(response) {
+$http.get(BASE_URL+"/newsget").then(function(response) {
       $scope.content = response.data;
 
 

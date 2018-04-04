@@ -35,9 +35,9 @@
 			</div>
 				
 		</div>
-		<div class="top-nav">
-		<nav class="navbar navbar-default navbar-fixed-top">
-	
+
+        <div class="top-nav" style="display: relative;">
+        <nav class="navbar navbar-default navbar-fixed-top w3-post-nav-menu" >
 	<!-- //header -->
 	<div class="container">
 			<div class="navbar-header">
@@ -100,7 +100,7 @@
 
 			<div class="agileinfo-top-grids">
 				<div class="col-sm-3 wthree-top-grid op" ng-repeat="x in content | filter:paginate">
-				<a ui-sref="details">	<img src="admin/Local_FS/news/{{x.Image}}" class="img-responsive image-grid image" alt="" />
+				<a ng-click="edit(x._id,x.Image,x.heading,x.subheading,x.description)">	<img src="admin/Local_FS/news/{{x.Image}}" class="img-responsive image-grid image" alt="" />
                    <div class="overlay">
                        <div class="text"><i class="fa fa-plus-square"></i></div>
                    </div>
@@ -211,7 +211,7 @@
 	<div class="footer_w3ls">
 		<div class="container">
 					<div class="footer_bottom1">
-						<p>© 2018 Pedicure. All rights reserved  <a href="#"></a></p>
+                        <p>© 2018 stayhappi. All rights reserved  <a href="#"></a></p>
 					</div>
 		</div>
 	</div>
