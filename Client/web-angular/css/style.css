@@ -248,7 +248,10 @@ background: linear-gradient( rgba(39, 36, 33, 0.96),#fff8f824), url(../images/pr
     min-height: 350px;
 } 
 
-
+.pricing-grids-info {
+    text-align: center;
+    margin: 0px 25px;
+}
 
 /*-- banner-text--*/
 .banner-text h2 {
@@ -1395,6 +1398,8 @@ h3.agileits-icons-title {
 	}
 }
 @media (max-width:768px){
+    .w3-banner-head-info{    margin-top: 0px;}
+    .contact-form div{ margin: 0px auto; }
     .led img{ 
        width: 100px;
     height: 100px;
@@ -4135,9 +4140,11 @@ nav.navbar.navbar-default.navbar-fixed-top {
 }
 }
 @media screen and (max-width: 480px){
+.about5{
+height: 213px !important;
 
-
-    .footer_grid img {
+}
+.footer_grid img {
     width: 100px !important;
     /* height: 110px !important; */
     margin: 0 auto !important;
@@ -4254,13 +4261,7 @@ ul.nav.navbar-nav li a {
     margin-left: 0;
 }
 .img-logo-footer{display: block;}
-.footer_grid img{
-
-        width: 365px !important;
-/*    height: 110px  !important;
-*/    margin: 0 auto !important;
-
-}
+.partner-grid{ width: auto; }
 }
 @media screen and (max-width: 414px){
 
