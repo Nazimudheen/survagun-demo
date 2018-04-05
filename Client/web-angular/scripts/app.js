@@ -128,9 +128,16 @@ angular
       })
 
       .state('contact',{
-       templateUrl:'views/contact.html',
-       url:'/contact'
-   })
+        controller: 'store',
+        templateUrl:'views/contact.html',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:['scripts/controllers/store.js']})
+          }
+        }
+      })
      
 
  

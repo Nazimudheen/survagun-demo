@@ -7,7 +7,7 @@ angular.module('sbAdminApp')
 $scope.index = $stateParams.index;
 
    var img = $stateParams.image
-    $scope.urlImg = 'Local_FS/news/'+img;
+    $scope.urlImg = 'Local_FS/store/'+img;
 $scope.location = $stateParams.location;
 
 

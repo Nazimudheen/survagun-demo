@@ -1,5 +1,4 @@
-<!--/main-header-->
-<div class="baner-product">
+<div class="baner-product" ng-controller="store">
 	
 	<!--/banner-info-->
 	  <div class="header">
@@ -8,7 +7,7 @@
 				<div class=" head-wl">
 					<div class="headder-w3">
 
-						<h1><a href="#"><img src="images/logo.png" class="img-responsive"/></a></h1>
+						<h1><a  ui-sref="home"><img src="images/logo.png" class="img-responsive"/></a></h1>
 					</div>
 
 					<div class="w3-header-top-right-text">
@@ -26,7 +25,7 @@
 					<div class="agileinfo-social-grids">
 						<h6 class="caption">Toll Free Number</h6>
 						<ul>
-							<li><a href="#"><strong>+18000789000</strong></a></li>
+							<li><a href="#"><strong>18002707755</strong></a></li>
 							
 						</ul>
 					</div>
@@ -59,9 +58,9 @@
                         <li><a   ui-sref="product">Our Products</a></li>
                         <li><a   ui-sref="quality">Our Quality</a></li>
                         <li><a   ui-sref="partner-with-us">Partner With Us</a></li>
-                        <li><a   ui-sref="article">Article</a></li>
-                        <li><a   ui-sref="news">Updates</a></li>
-                        <li class="active"><a   ui-sref="contact">Contact Us</a></li>
+                        <li><a   ui-sref="article">Articles</a></li>
+<!--                         <li><a   ui-sref="news">Updates</a></li>
+ -->                        <li class="active"><a   ui-sref="contact">Contact Us</a></li>
 
 
 					</ul>
@@ -149,99 +148,96 @@
 		</div>
 	</div>
 
-<!-- <div class="container-fluid">
+ <div class="container-fluid">
 	<div class="col-sm-12">
 				
 
 
 </div>		
 
-</div> -->		
-<!-- <div class="">
+</div> 		
+ <div class="">
 
 		<div class="container">
 
 			<div class="col-sm-12">
 
 			<div class="agileinfo-top-grids">
-				<div class="col-sm-4 wthree-top-grid ">
+<!-- 
+				<div class="col-sm-4 wthree-top-grid " >
 				<img src="images/g1.jpg" class="img-responsive image-grid image" alt="" />
                    <div class="overlay-contact">
-                       <div class="text"> --><!-- <i class="fa fa-plus-square"></i> --><!-- </div>
+                       <div class="text"> <i class="fa fa-plus-square"></i>  </div>
                    </div>
 		<h4>Delhi Kolaholi  <span class="span-direction"><i class="fa fa-map-marker" aria-hidden="true"></i>
- Direction </span> </h4>	</div>
-				<div class="col-sm-4 wthree-top-grid ">
-		<img src="images/g2.jpg" class="img-responsive image-grid image" alt="" />
-                   <div class="overlay-contact"> -->
-                      <!--  <div class="text"> --><!-- <i class="fa fa-plus-square"></i> --><!-- </div> -->
-                 <!--   </div>
-		<h4>Delhi Kolaholi  <span class="span-direction"><i class="fa fa-map-marker" aria-hidden="true"></i>
- Direction </span> </h4>					
-					
-				</div> -->
+          Direction </span> </h4>	
+         </div> -->
 
-			<!-- 	<div class="col-sm-4 wthree-top-grid">
-				<img src="images/g2.jpg" class="img-responsive image-grid image" alt="" />
-                   <div class="overlay-contact">
-                       <div class="text"> --><!-- <i class="fa fa-plus-square"></i> --><!-- </div>
-                   </div>
-					<h4>Delhi Kolaholi  <span class="span-direction"><i class="fa fa-map-marker" aria-hidden="true"></i>
- Direction </span> </h4>
-				
-					
-				</div> -->
-			<!-- 	<div class="col-sm-4 wthree-top-grid ">
-				<img src="images/g1.jpg" class="img-responsive image-grid image" alt="" />
-                   <div class="overlay-contact">
-                       <div class="text"> --><!-- <i class="fa fa-plus-square"></i> --><!-- </div> -->
-    <!--                </div>
-		<h4>Delhi Kolaholi  <span class="span-direction"><i class="fa fa-map-marker" aria-hidden="true"></i>
- Direction </span> </h4>	</div>
-				<div class="col-sm-4 wthree-top-grid ">
-		<img src="images/g2.jpg" class="img-responsive image-grid image" alt="" />
-                   <div class="overlay-contact">
-                       <div class="text"> --><!-- <i class="fa fa-plus-square"></i> --><!-- </div>
-                   </div>
-		<h4>Delhi Kolaholi  <span class="span-direction"><i class="fa fa-map-marker" aria-hidden="true"></i>
- Direction </span> </h4>					
-					
-				</div> -->
+<section class="c-card col-sm-4" ng-repeat="x in content | filter:paginate">
+ <div class="c-card__img">
+    <img src="admin/Local_FS/store/{{x.Image}}" class="img-responsive">
+  </div>
+  <div class="c-card__texts">
+   
+    <hr>
+    <div class="p-40" style="        overflow: auto;
 
-			<!-- 	<div class="col-sm-4 wthree-top-grid ">
-				<img src="images/g2.jpg" class="img-responsive image-grid image" alt="" />
-                   <div class="overlay-contact">
-                       <div class="text"><i class="fa fa-plus-square"></i></div>
-                   </div>
-					<h4>Delhi Kolaholi  <span class="span-direction"><i class="fa fa-map-marker" aria-hidden="true"></i>
- Direction </span> </h4>
-				
-					
-				</div> -->
+">
+      <ul >
+        <li class="service ">
+
+
+          <span class="service__headline"><i class="fa fa-map-marker"></i>
+      {{x.address}}</span>
+          </li>
+        <li class="service">
+          <span class="service__headline"><i class="fa fa-envelope"></i>
+   {{x.email}}</span>
+        </li>
+        <li class="service">
+          <span class="service__headline"><i class="fa fa-phone-square"></i>   {{x.phone}}
+
+</span>
+        </li>
+   
+
+
+
+   <li class="service class-active">
+          <span class="service__headline">  
+ <a href="{{x.location}}" target="_blank"><button type="button" class="btn btn-warning" style=" margin: 0px 85px;"><i class="fa fa-map-marker"></i> View Direction</button></a>
+
+</span>
+        </li>
+
+</ul>
+
+</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 			
 
-<!-- 
 				<div class="col-sm-12">
-                  <nav>
-						<ul class="pagination">
-							<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-							<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-						</ul>
-					</nav>
-             </div> -->
+                  <nav ng-show="content.length!=0">
+						
+<pagination total-items="totalItems" ng-model="currentPage"
+          max-size="5" boundary-links="true"
+          items-per-page="numPerPage" class="pagination-sm">
+        </pagination>
 
-				<!-- <div class="clearfix"> </div>
+					</nav>
+             </div> 
+
+			 <div class="clearfix"> </div>
 			</div>
 			</div>
 
 
 </div>
- -->
+
 
 
 
@@ -269,9 +265,9 @@
                         <li><a   ui-sref="product">Our Products</a></li>
                         <li><a   ui-sref="quality">Our Quality</a></li>
                         <li><a   ui-sref="partner-with-us">Partner With Us</a></li>
-                        <li><a   ui-sref="article">Article</a></li>
-                        <li ><a   ui-sref="news">Updates</a></li>
-                        <li><a   ui-sref="contact">Contact Us</a></li>
+                        <li><a   ui-sref="article">Articles</a></li>
+<!--                         <li ><a   ui-sref="news">Updates</a></li>
+ -->                        <li><a   ui-sref="contact">Contact Us</a></li>
                 </ul>
             </div>
             <div class="col-md-3 col-sm-12 footer_grid ad">
@@ -303,10 +299,10 @@ Corporate Office :
                 <ul class="social">
                     <li><a href="https://www.facebook.com/stayhappi.in/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
                     <li><a href="https://twitter.com/SGunaushdhi" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-                    <li><a href="https://plus.google.com/112529629485746569366 " target="_blank"><i class="fa fa-google-plus-square"></i></a></li>
+                    <!-- <li><a href="https://plus.google.com/112529629485746569366 " target="_blank"><i class="fa fa-google-plus-square"></i></a></li>
 
 
-                    <li><a href="https://www.linkedin.com/in/sarva-gunaushdhi-831988157/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/sarva-gunaushdhi-831988157/" target="_blank"><i class="fa fa-linkedin"></i></a></li> -->
 
 
 
@@ -328,4 +324,4 @@ Corporate Office :
                     </div>
         </div>
     </div>
-    <!-- //footer -->
+    <!-- //footer 

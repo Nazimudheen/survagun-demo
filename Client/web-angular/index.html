@@ -78,6 +78,22 @@
                                 
             });
     </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+                };
+            */
+                                
+            $().UItoTop({ easingType: 'easeOutQuart' });
+                                
+            });
+    </script>
     <!-- //here ends scrolling icon -->
 <!-- //for smooth scrolling -->
 <!-- scrolling script -->
@@ -114,7 +130,7 @@
 
   <div ng-app="sbAdminApp">
 
-        <div ui-view></div>
+        <div ui-view  autoscroll="true"></div>
 
  </div>
  
