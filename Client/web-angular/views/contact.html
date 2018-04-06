@@ -92,26 +92,26 @@
 <!--               <h3 class="heading-agileinfo">Contact Us<span></span></h3>
  -->				<!---728x90-->
 				<div class="contact-form">
-					     <form method="post" action="#">
+					     <form >
 							 <div class="left_form">
 					    	<div>
 						    	<span><label>Name</label></span>
-						    	<span><input name="userName" type="text" class="textbox" required=""></span>
+						    	<span><input name="name" ng-model="name" type="text" class="textbox" required=""></span>
 						    </div>
 						    <div>
 						    	<span><label>E-mail</label></span>
-						    	<span><input name="userEmail" type="text" class="textbox" required=""></span>
+						    	<span><input name="email" ng-model="email" type="text" class="textbox" required=""></span>
 						    </div>
 						    <div>
 						     	<span><label>Phone</label></span>
-						    	<span><input name="userPhone" type="text" class="textbox" required=""></span>
+						    	<span><input name="phone" ng-model="phone" type="text" class="textbox" required=""></span>
 						    </div>
 								<div>					    	
 									<span><label>Message</label></span>
-									<span><textarea name="Message" required=""> </textarea></span>
+									<span><textarea  ng-model="message" name="message" required=""> </textarea></span>
 								</div>
 							   <div>
-									<span><input type="submit" value="Submit" class="myButton"></span>
+									<span><input type="submit" ng-click="save()" value="Submit" class="myButton"></span>
 							  </div>
 					    					    </div>
 
@@ -188,7 +188,9 @@
 
 
           <span class="service__headline"><i class="fa fa-map-marker"></i>
-      {{x.address}}</span>
+      {{x.address}} <br>
+      {{x.re_address}}
+  </span>
           </li>
         <li class="service">
           <span class="service__headline"><i class="fa fa-envelope"></i>

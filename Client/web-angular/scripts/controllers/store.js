@@ -41,5 +41,75 @@ $scope.description = description;
 
 
 
+// $scope.save = function() {
+//             $scope.submitted = true;
+
+//          var payload = new FormData();
+
+//          alert($scope.user);  
+    
+    
+// if ($scope.Image) {
+//   payload.append('file', $scope.Image);
+
+//      payload.append("Image",$scope.Image.name);
+
+//    payload.append("location",$scope.location);
+
+
+//     payload.append("email", $scope.email);
+//         payload.append("phone", $scope.phone);
+
+
+//         payload.append("address", $scope.description);
+//         payload.append("re_address", $scope.r_description);
+
+
+
+//         $http({ url :BASE_URL+'/store',
+//             data :  payload,
+//             method : 'POST',
+//                 headers: {
+//                     'Content-type': undefined
+//                 }
+//             })
+//             .then(function(data) {
+//      if(data.status== 200){
+
+//         $scope.successMessage = 'Successfully Added Store !';
+//         $scope.successMessagebool = true;
+//         $timeout(function () {
+//             $scope.successMessagebool = false;
+//        window.location.replace("#/dashboard/store");
+//         }, 1000);
+//         }else{
+
+
+//           $scope.successMessage = 'Failed  Added Store !';
+//          $scope.successMessagebool = true;
+//             $timeout(function () {
+//             $scope.successMessagebool = false;
+//            }, 1000);
+
+//         }
+
+                // alert($scope.ListProducts);
+
+          //   });
+          // };
+        // }
+
+    
+
+
+
+
+
+
+
+
+
+
+
 
   });

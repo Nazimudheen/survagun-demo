@@ -8,8 +8,7 @@ angular.module('sbAdminApp')
             $scope.submitted = true;
 
          var payload = new FormData();
-    
-		
+console.log($scope.r_description);		
 if ($scope.Image) {
 	payload.append('file', $scope.Image);
 
