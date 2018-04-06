@@ -92,27 +92,34 @@
 <!--               <h3 class="heading-agileinfo">Contact Us<span></span></h3>
  -->				<!---728x90-->
 				<div class="contact-form">
-					     <form >
+					<div class="alert alert-info"  ng-show="successMessage"><strong></strong><p style="padding: 10px; font-weight: 700;">{{successMessage}} </p></div>
+					     <form  name="myForm" novalidate ng-submit=save() class="form">
 							 <div class="left_form">
 					    	<div>
-						    	<span><label>Name</label></span>
-						    	<span><input name="name" ng-model="name" type="text" class="textbox" required=""></span>
-						    	
+						    	<span><label>Name  <i style="color: red">*</i></label></span>
+						    	<span><input name="name" ng-model="name" type="text" class="textbox" ng-required="true"></span>
+<span style="color:red" ng-show="myForm.name.$invalid">This is Required!</span>
 						    </div>
 						    <div>
-						    	<span><label>E-mail</label></span>
-						    	<span><input name="email" ng-model="email" type="text" class="textbox" required=""></span>
+						    	<span><label>E-mail <i style="color: red">*</i></label></span>
+						  <span><input type="email" ng-model="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="textbox" ng-required="true"></span>
+<span style="color:red" ng-show="myForm.email.$invalid">E-mail is Required!</span>
+
 						    </div>
 						    <div>
-						     	<span><label>Phone</label></span>
-						    	<span><input name="phone" ng-model="phone" type="text" class="textbox" required=""></span>
+						     	<span><label>Phone  <i style="color: red">*</i></label></span>
+						    	<span><input name="phone" ng-model="phone" type="text" class="textbox"  ng-required="true"></span>
+<span style="color:red" ng-show="myForm.phone.$invalid">Phone is Required!</span>
+
 						    </div>
 								<div>					    	
-									<span><label>Message</label></span>
-									<span><textarea  ng-model="message" name="message" required=""> </textarea></span>
+									<span><label>Message  <i style="color: red">*</i></label></span>
+									<span><textarea  ng-model="message" name="message" ng-required="true"> </textarea></span>
+<span style="color:red" ng-show="myForm.message.$invalid">Message is Required!</span>
+
 								</div>
 							   <div>
-									<span><input type="submit" ng-click="save()" value="Submit" class="myButton"></span>
+									<span><input type="submit" ng-disabled="form.$invalid"   value="Submit" class="myButton"></span>
 							  </div>
 					    					    </div>
 

@@ -71,7 +71,7 @@
                            
                             <div class="form-group">
                                 <label> Office Address</label>
-    <textarea id="txtEditor" class="form-control" rows="3" placeholder="Enter Description" name="r_description" ng-model="r_description" required> </textarea>
+      <trix-editor style="height: 300px; overflow: scroll;"><textarea id="txtEditor" class="form-control" rows="3" placeholder="Enter Description" name="r_description" ng-model="r_description" required> </textarea></trix-editor>
 
        <span style="color:red" ng-show="(form.r_description.$dirty || submitted) && form.r_description.$error.required">
 <span ng-show="myForm.r_description.$error.required">Regional Office Address is required.</span>

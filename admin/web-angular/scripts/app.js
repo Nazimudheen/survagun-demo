@@ -402,7 +402,7 @@ angular
 
        .state('dashboard.editarticle',{
         
- url:'/editnews/:index/:image/:heading/:subheading/:description',
+ url:'/editarticle/:index/:image/:heading/:subheading/:description',
 
             controller:'editarticle',                                                                                            
           templateUrl:'views/editarticle.html',

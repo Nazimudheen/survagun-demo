@@ -3186,6 +3186,48 @@ margin: 10px;
     color: #fff;*/
 
 }
+
+
+
+
+.contact-form input[type="email"], .contact-form textarea {
+    padding: 16px 15px;
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: #464646;
+    font-size: 1em;
+    box-shadow: inset 0px 0px 3px #999;
+    -webkit-box-shadow: inset 0px 0px 3px #999;
+    -moz-box-shadow: inset 0px 0px 3px #999;
+    -o-box-shadow: inset 0px 0px 3px #999;
+    -webkit-appearance: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.contact-form input[type="email"], .contact-form textarea {
+    padding: 16px 15px;
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: #464646;
+    font-size: 1em;
+    box-shadow: inset 0px 0px 3px #999;
+    -webkit-box-shadow: inset 0px 0px 3px #999;
+    -moz-box-shadow: inset 0px 0px 3px #999;
+    -o-box-shadow: inset 0px 0px 3px #999;
+    -webkit-appearance: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+
+
+
 /*-- //to-top --*/
 
 

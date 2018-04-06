@@ -46,10 +46,11 @@ $scope.save = function() {
 
          var payload = new FormData();
 
-         alert($scope.name);  
+         // alert($scope.name);  
     
     
 
+          if ($scope.myForm.$valid) {
 
      payload.append("name",$scope.name);
 
@@ -62,7 +63,6 @@ $scope.save = function() {
         payload.append("message", $scope.message);
 
 
-
         $http({ 
             url :BASE_URL+'/contact',
             data :  payload,
@@ -71,14 +71,19 @@ $scope.save = function() {
                     'Content-type': undefined
                 }
             })
-            .then(function(data) {
-     if(data.status== 200){
+            .then(function(response) {
+              // alert();
+     if(response.data.msg=='successfull'){
+    $scope.name = "";
+    $scope.email = "";
+    $scope.phone = "";
+    $scope.message = "";
 
         $scope.successMessage = 'Successfully Added We will Contact Soon !';
         $scope.successMessagebool = true;
         $timeout(function () {
             $scope.successMessagebool = false;
-       window.location.replace("#/dashboard/contact");
+       window.location.replace("#/contact");
         }, 1000);
         }else{
 
@@ -91,11 +96,11 @@ $scope.save = function() {
 
         }
 
-                alert($scope.ListProducts);
+                // alert($scope.ListProducts);
 
             });
           };
-        
+        }
 
     
 
