@@ -4,38 +4,37 @@
  Contact = mongoose.model('Contact');
  var fs = require('fs-extra');
 
-var nodemailer = require('nodemailer');
-var smtpTransport = require('nodemailer-smtp-transport');
+
 
 var contactCtrl = {};
 
 contactCtrl.apiPOST = function (req, res) {
- 
-let nodemailer = require('nodemailer');
+var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
 
-let MAIL_SERVER_URL = '52.148.91.53';
-let smtp = nodemailer.createTransport({
-    host: MAIL_SERVER_URL,
-    connectionTimeout: 60000
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'nasimudheen28@gmail.comm',
+        pass: 'p@$$word28'
+    }
 });
 
-module.exports = {
-    options: (mailOptions) => {
-        let email = {
-            from: 'zendesign007@gmail.com ',
-            to: 'nasimudheen28@gmail.com',
-            subject: 'yourEmailSubject'
-            text: `${mailOptions.auid} requested access for modeler`
-        };
-        smtp.sendMail(email, (err, info) => {
-            if (err) 
-                console.log(err);
-            else
-                console.log(`Message sent: ${info.response}`);
 
-        });
+transporter.sendMail({
+  from: 'nasimudheen28@gmail.com',
+  to: 'nasimudheen97@gmail.com',
+  subject: 'test',
+  text: 'test tecxt'
+}, function(error, info){
+    if(error){
+        console.log(error);
+    }else{
+        console.log('Message sent: ' + info.response);
     }
-}
+});
+
+
 };
 
 

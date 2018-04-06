@@ -18,6 +18,7 @@
     "cors": "^2.8.4",
     "ejs": "^2.5.8",
     "express": "^4.16.2",
+    "express-mailer": "^0.3.1",
     "express-session": "^1.15.6",
     "fs-extra": "^5.0.0",
     "jsonwebtoken": "^8.2.0",
@@ -31,7 +32,8 @@
     "passport": "^0.4.0",
     "passport-jwt": "^3.0.0",
     "passport-local": "^1.0.0",
-    "sendgrid": "^5.2.3"
+    "sendgrid": "^5.2.3",
+    "sendmail": "^1.4.1"
   },
   "devDependencies": {
     "node.jwt": "^0.1.5"
