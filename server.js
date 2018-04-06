@@ -8,6 +8,7 @@
   Faq = require('./admin/model/faqmodel'),
   Article = require('./admin/model/articlemodel'),
   User = require('./admin/model/usersmodel'),
+  Contact = require('./admin/model/conatctmodel'),
 
   bodyParser = require('body-parser'),
   routes = require('./admin/routes/routMap');

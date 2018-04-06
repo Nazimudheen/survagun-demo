@@ -4,6 +4,7 @@ var store = require('../controller/storecontroler');
 var faq = require('../controller/faqcontroller');
 var article = require('../controller/articlecontroller');
 var user = require('../controller/userscontroller');
+var contact = require('../controller/contactcontroller');
 
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
@@ -33,6 +34,7 @@ module.exports = function(app) {
               app.post('/API/article', multipartMiddleware,article.apiPOST);
               app.delete('/API/articleDelete', multipartMiddleware,article.articleDelete);
               app.put('/API/articleedit',multipartMiddleware,article.article_edit);
+              app.post('/API/contact',multipartMiddleware,contact.apiPOST);
 
               app.post('/API/login',user.login);
 

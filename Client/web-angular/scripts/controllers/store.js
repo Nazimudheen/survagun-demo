@@ -1,7 +1,7 @@
 angular.module('sbAdminApp')
   .controller('store', function($scope,$position,$http,$state,$timeout,BASE_URL) {
 
-  console.log(BASE_URL);
+  // console.log(BASE_URL);
 $http.get(BASE_URL+"/storeget").then(function(response) {
       $scope.content = response.data;
 
@@ -41,63 +41,61 @@ $scope.description = description;
 
 
 
-// $scope.save = function() {
-//             $scope.submitted = true;
+$scope.save = function() {
+            $scope.submitted = true;
 
-//          var payload = new FormData();
+         var payload = new FormData();
 
-//          alert($scope.user);  
+         alert($scope.name);  
     
     
-// if ($scope.Image) {
-//   payload.append('file', $scope.Image);
-
-//      payload.append("Image",$scope.Image.name);
-
-//    payload.append("location",$scope.location);
 
 
-//     payload.append("email", $scope.email);
-//         payload.append("phone", $scope.phone);
-
-
-//         payload.append("address", $scope.description);
-//         payload.append("re_address", $scope.r_description);
+     payload.append("name",$scope.name);
 
 
 
-//         $http({ url :BASE_URL+'/store',
-//             data :  payload,
-//             method : 'POST',
-//                 headers: {
-//                     'Content-type': undefined
-//                 }
-//             })
-//             .then(function(data) {
-//      if(data.status== 200){
-
-//         $scope.successMessage = 'Successfully Added Store !';
-//         $scope.successMessagebool = true;
-//         $timeout(function () {
-//             $scope.successMessagebool = false;
-//        window.location.replace("#/dashboard/store");
-//         }, 1000);
-//         }else{
+    payload.append("email", $scope.email);
+        payload.append("phone", $scope.phone);
 
 
-//           $scope.successMessage = 'Failed  Added Store !';
-//          $scope.successMessagebool = true;
-//             $timeout(function () {
-//             $scope.successMessagebool = false;
-//            }, 1000);
+        payload.append("message", $scope.message);
 
-//         }
 
-                // alert($scope.ListProducts);
 
-          //   });
-          // };
-        // }
+        $http({ 
+            url :BASE_URL+'/contact',
+            data :  payload,
+            method : 'POST',
+                headers: {
+                    'Content-type': undefined
+                }
+            })
+            .then(function(data) {
+     if(data.status== 200){
+
+        $scope.successMessage = 'Successfully Added We will Contact Soon !';
+        $scope.successMessagebool = true;
+        $timeout(function () {
+            $scope.successMessagebool = false;
+       window.location.replace("#/dashboard/contact");
+        }, 1000);
+        }else{
+
+
+          $scope.successMessage = 'Failed  Added Contact !';
+         $scope.successMessagebool = true;
+            $timeout(function () {
+            $scope.successMessagebool = false;
+           }, 1000);
+
+        }
+
+                alert($scope.ListProducts);
+
+            });
+          };
+        
 
     
 
