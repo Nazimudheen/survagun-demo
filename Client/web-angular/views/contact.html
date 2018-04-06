@@ -180,7 +180,7 @@
   <div class="c-card__texts">
    
     <hr>
-    <div class="p-40" style="        overflow: auto;
+    <div class="p-40" style="        /*overflow: auto;*/
 
 ">
       <ul >
@@ -188,7 +188,7 @@
 
 
           <span class="service__headline"><i class="fa fa-map-marker"></i>
-      {{x.address}} <br>
+      <a style="    color: #4ab449;">{{x.address}}</a> <br>
       {{x.re_address}}
   </span>
           </li>
@@ -197,7 +197,7 @@
    {{x.email}}</span>
         </li>
         <li class="service">
-          <span class="service__headline"><i class="fa fa-phone-square"></i>   {{x.phone}}
+          <span class="service__headline" style="font-weight: 700"><i class="fa fa-phone-square"></i>   {{x.phone}}
 
 </span>
         </li>
