@@ -1,5 +1,5 @@
 angular.module('sbAdminApp')
-  .controller('Article', function($scope,$position,$http,$state,$timeout, BASE_URL) {
+  .controller('Article', function($scope,$position,$http,$state,$timeout,$sce, BASE_URL) {
 
 
 $http.get(BASE_URL+"/articleget").then(function(response) {
@@ -37,7 +37,6 @@ $http({
     }
 })
 .then(function(data) {
-    // console.log(data.status);
     
   if(data.status== 200){
      $timeout(function () {

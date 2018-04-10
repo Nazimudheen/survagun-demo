@@ -1,5 +1,5 @@
 angular.module('sbAdminApp')
-  .controller('News', function($scope,$position,$http,$state,$timeout, BASE_URL) {
+  .controller('News', function($scope,$position,$http,$state,$timeout,$sce, BASE_URL) {
 
 
 $http.get(BASE_URL+"/newsget").then(function(response) {

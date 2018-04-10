@@ -4,7 +4,7 @@ angular
     'oc.lazyLoad',
     'ui.router',
     'ui.bootstrap',
-    'angular-loading-bar','ngRoute','ngResource',
+    'angular-loading-bar','ngRoute','ngResource','ngSanitize',
   ]).constant('BASE_URL', '/API')
 
 .run(function($http,$rootScope,$window,BASE_URL,$state)
@@ -443,4 +443,14 @@ angular
 
     
 
- 
+  angular.module('sbAdminApp').filter('trustAs', ['$sce', 
+    function($sce) {
+        return function (input, type) {
+            if (typeof input === "string") {
+                return $sce.trustAs(type || 'html', input);
+            }
+            console.log("trustAs filter. Error. input isn't a string");
+            return "";
+        };
+    }
+]);

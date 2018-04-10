@@ -1,5 +1,5 @@
 angular.module('sbAdminApp')
-  .controller('Faq', function($scope,$position,$http,$state,$timeout, BASE_URL) {
+  .controller('Faq', function($scope,$position,$http,$state,$timeout,$sce, BASE_URL) {
 
 
 $http.get(BASE_URL+"/faqget").then(function(response) {

@@ -1,5 +1,5 @@
 angular.module('sbAdminApp')
-  .controller('Store', function($scope,$position,$http,$state,$timeout, BASE_URL) {
+  .controller('Store', function($scope,$position,$http,$state,$timeout,$sce, BASE_URL) {
 
 
 $http.get(BASE_URL+"/storeget").then(function(response) {

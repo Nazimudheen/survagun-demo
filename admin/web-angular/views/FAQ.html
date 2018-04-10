@@ -66,7 +66,7 @@
 
                                 <td>{{x.heading}}</td>
                                 <td>{{x.sub_heading}}</td>
-                                <td>{{x.description}}</td>
+                                <td><p ng-bind-html="x.description"></p></td>
 
 
                                 <td class="center"><button class="btn btn-danger"  ng-click="delete(x._id,index)"> <i class="fa fa-trash-o" ></i></button></td>      

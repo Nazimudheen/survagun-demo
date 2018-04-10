@@ -1,5 +1,5 @@
 angular.module('sbAdminApp')
-  .controller('article', function($scope,$position,$http,$state,$timeout,BASE_URL) {
+  .controller('article', function($scope,$position,$http,$state,$timeout,$sce,BASE_URL) {
 
   console.log(BASE_URL);
 $http.get(BASE_URL+"/articleget").then(function(response) {
@@ -43,3 +43,4 @@ $scope.description = description;
 
 
   });
+ 
