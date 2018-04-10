@@ -1,5 +1,5 @@
 angular.module('sbAdminApp')
-  .controller('editNews', function($scope,$position,$http,$state,$stateParams,$timeout) {
+  .controller('editNews', function($scope,$position,$http,$state,$stateParams,$timeout,BASE_URL) {
 
 
 
@@ -23,6 +23,7 @@ $scope.description = $stateParams.description;
 
 
 $scope.save = function() {
+
          var payload = new FormData();
           if($scope.Image) // if a is negative,undefined,null,empty value then...
                {
@@ -33,11 +34,11 @@ $scope.save = function() {
           }
          payload.append("Index",$scope.index);
 
-         console.log($scope.index);
+         // console.log($scope.index);
 
          payload.append("heading",$scope.heading);
          payload.append("subheading", $scope.subheading);
-         payload.append("description", $scope.description);
+         payload.append("description", CKEDITOR.instances['editor1'].getData());
 
 
 

@@ -26,6 +26,7 @@ $scope.phone = $stateParams.phone;
 
 
 $scope.save = function() {
+
          var payload = new FormData();
           if($scope.Image) // if a is negative,undefined,null,empty value then...
                {
@@ -36,13 +37,12 @@ $scope.save = function() {
           }
          payload.append("Index",$scope.index);
 
-         console.log($scope.index);
 
          payload.append("email",$scope.email);
          payload.append("phone", $scope.phone);
          payload.append("address", $scope.address);
 
-         payload.append("re_address", $scope.re_address);
+         payload.append("re_address",  CKEDITOR.instances['editor1'].getData());
 
 
 $http({

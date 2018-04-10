@@ -5,10 +5,10 @@ angular.module('sbAdminApp')
   $scope.form = {};
 
       $scope.save = function() {
+
             $scope.submitted = true;
 
          var payload = new FormData();
-console.log($scope.r_description);		
 if ($scope.Image) {
 	payload.append('file', $scope.Image);
 
@@ -22,7 +22,7 @@ if ($scope.Image) {
 
 
         payload.append("address", $scope.description);
-        payload.append("re_address", $scope.r_description);
+        payload.append("re_address",  CKEDITOR.instances['editor1'].getData());
 
 
 

@@ -98,24 +98,24 @@
 					    	<div>
 						    	<span><label>Name  <i style="color: red">*</i></label></span>
 						    	<span><input name="name" ng-model="name" type="text" class="textbox" ng-required="true"></span>
-<span style="color:red" ng-show="myForm.name.$invalid">This is Required!</span>
+<span style="color:red" ng-show="myForm.name.$dirty && myForm.name.$invalid">This is Required!</span>
 						    </div>
 						    <div>
 						    	<span><label>E-mail <i style="color: red">*</i></label></span>
 						  <span><input type="email" ng-model="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="textbox" ng-required="true"></span>
-<span style="color:red" ng-show="myForm.email.$invalid">E-mail is Required!</span>
+<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">E-mail is Required!</span>
 
 						    </div>
 						    <div>
 						     	<span><label>Phone  <i style="color: red">*</i></label></span>
 						    	<span><input name="phone" ng-model="phone" type="text" class="textbox"  ng-required="true"></span>
-<span style="color:red" ng-show="myForm.phone.$invalid">Phone is Required!</span>
+<span style="color:red" ng-show="myForm.phone.$dirty && myForm.phone.$invalid">Phone is Required!</span>
 
 						    </div>
 								<div>					    	
 									<span><label>Message  <i style="color: red">*</i></label></span>
 									<span><textarea  ng-model="message" name="message" ng-required="true"> </textarea></span>
-<span style="color:red" ng-show="myForm.message.$invalid">Message is Required!</span>
+<span style="color:red" ng-show="myForm.message.$dirty && myForm.message.$invalid">Message is Required!</span>
 
 								</div>
 							   <div>

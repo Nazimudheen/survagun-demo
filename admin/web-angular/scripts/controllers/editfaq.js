@@ -1,5 +1,5 @@
 angular.module('sbAdminApp')
-  .controller('editfaq', function($scope,$position,$http,$state,$stateParams,$timeout) {
+  .controller('editfaq', function($scope,$position,$http,$state,$stateParams,$timeout,BASE_URL) {
 
 
 
@@ -25,11 +25,10 @@ $scope.save = function() {
         
          payload.append("Index",$scope.index);
 
-         console.log($scope.index);
 
          payload.append("heading",$scope.heading);
          payload.append("sub_heading", $scope.subheading);
-         payload.append("description", $scope.description);
+         payload.append("description", CKEDITOR.instances['editor1'].getData());
 
 
 

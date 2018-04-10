@@ -8,7 +8,8 @@ angular.module('sbAdminApp')
            
          var payload = new FormData();
     
-		
+
+
 if ($scope.Image) {
 	payload.append('file', $scope.Image);
 
@@ -19,7 +20,7 @@ if ($scope.Image) {
 
     payload.append("subheading", $scope.subheading);
 
-        payload.append("description", $scope.description);
+        payload.append("description", CKEDITOR.instances['editor1'].getData());
         $http({ url :BASE_URL+'/news',
         		data :  payload,
         		method : 'POST',

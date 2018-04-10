@@ -22,7 +22,7 @@ if ($scope.Image) {
 
     payload.append("subheading", $scope.subheading);
 
-          payload.append("description", $scope.description);
+          payload.append("description", CKEDITOR.instances['editor1'].getData());
 
         $http({ url :BASE_URL+'/article',
         		data :  payload,

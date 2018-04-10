@@ -15,7 +15,7 @@ angular.module('sbAdminApp')
         payload.append("sub_heading", $scope.subheading);
 
 
-        payload.append("description", $scope.description);
+        payload.append("description", CKEDITOR.instances['editor1'].getData());
 
 
          { 

@@ -1,7 +1,6 @@
-
-
-</script>
-
+      <script>
+            CKEDITOR.replace( 'editor1' );
+        </script>
 <div class="row" ng-controller="editarticle" >
     <div class="col-lg-12">
         <h1 class="page-header">              EDIT ARTICLE 
@@ -64,7 +63,7 @@
                            
                             <div class="form-group">
                                 <label>Description</label>
-     <trix-editor style="height: 300px; overflow: scroll;" ng-model="description"> <textarea id="txtEditor"  class="form-control" rows="3" placeholder="Enter Description" ng-model="description" name="description" required></textarea></trix-editor>
+      <textarea  name="editor1" ng-model="description"></textarea>
 
     <span style="color:red" ng-show="myForm.description.$invalid">
 <span ng-show="myForm.description.$error.required">Sub Heading is required.</span>
