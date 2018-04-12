@@ -131,7 +131,7 @@ $scope.save1 = function() {
 
 
         $http({ 
-            url :BASE_URL+'/send_mail',
+            url :BASE_URL+'/contact',
             data :  payload,
             method : 'POST',
                 headers: {
@@ -151,7 +151,7 @@ $scope.save1 = function() {
         $scope.successMessage = 'Thank you For reaching to us. We will contact you soon!';
       $timeout(function () {
        $scope.successMessage = false;
-       window.location.replace("#/contact");
+       window.location.replace("#/home");
             }, 2000);
         }else{
 
