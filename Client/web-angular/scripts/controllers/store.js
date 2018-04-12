@@ -109,16 +109,18 @@ $scope.save = function() {
 
 $scope.save1 = function() {
 
-            $scope.submitted = true;
+           
+  $scope.submitted = true;
 
          var payload = new FormData();
 
          // alert($scope.name);  
     
     
+
           if ($scope.myForm.$valid) {
 
-     payload.append("name",$scope.name);
+
 
 
 
@@ -128,7 +130,6 @@ $scope.save1 = function() {
 
 
 
-     
         $http({ 
             url :BASE_URL+'/test',
             data :  payload,
@@ -140,17 +141,18 @@ $scope.save1 = function() {
             .then(function(response) {
               // alert();
      if(response.data.msg=='successfull'){
-       $scope.email = "";
-       $scope.phone = "";
-         $scope.myForm.$setValidity();
+    $scope.name = "";
+    $scope.email = "";
+    $scope.phone = "";
+    $scope.message = "";
+        $scope.myForm.$setValidity();
         $scope.myForm.$setPristine();
         $scope.myForm.$setUntouched(); 
-
-        $scope.successMessage = ' Thank You We Will Get Back to You Soon!';
-     $timeout(function () {
-                                    $scope.successMessage = false;
-       window.location.replace("#/home");
-                                }, 2000);
+        $scope.successMessage = 'Thank you For reaching to us. We will contact you soon!';
+      $timeout(function () {
+       $scope.successMessage = false;
+       window.location.replace("#/contact");
+            }, 2000);
         }else{
 
 
@@ -162,16 +164,13 @@ $scope.save1 = function() {
 
         }
 
-    
-            });
-          }else{
-   $scope.successMessage = 'Please Enter Columns !';
-    $timeout(function () {
-                                    $scope.successMessage = false;
-       window.location.replace("#/home");
-                                }, 2000);
+                // alert($scope.ListProducts);
 
-          }
+            });
+          };
+
+
+
         }
 
 
