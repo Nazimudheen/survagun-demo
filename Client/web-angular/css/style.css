@@ -3521,6 +3521,8 @@ font-size: 25px;
     font-size: 25px;
     /* padding-bottom: 119px; */
   }
+.footer1{padding-left: 110px;}
+
 }
 @media screen and (max-width: 1080px){
 	.banner-text h2 {
