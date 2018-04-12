@@ -70,13 +70,13 @@ angular
     })
       .state('home',{
         url:'/home',
-        controller: 'MainCtrl',
+        controller: 'home',
         templateUrl:'views/home.html',
         resolve: {
           loadMyFiles:function($ocLazyLoad) {
             return $ocLazyLoad.load({
               name:'sbAdminApp',
-              files:['scripts/controllers/main.js'                  
+              files:['scripts/controllers/home.js'                  
                     ]})
           }
         }
@@ -129,6 +129,7 @@ angular
 
       .state('contact',{
         controller: 'store',
+          url:'/contact',
         templateUrl:'views/contact.html',
         resolve: {
           loadMyFiles:function($ocLazyLoad) {
@@ -138,7 +139,18 @@ angular
           }
         }
       })
-     
+     .state('store',{
+        controller: 'store',
+          url:'/store',
+        templateUrl:'views/storelist.html',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:['scripts/controllers/store.js']})
+          }
+        }
+      })
 
  
 
@@ -231,3 +243,5 @@ angular.module('sbAdminApp')
         };
     }
 ]);
+
+ 

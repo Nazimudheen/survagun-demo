@@ -1,5 +1,5 @@
 
-<div  ng-controller="MainCtrl">
+<div  ng-controller="home">
     <div class="demo-inner-content">
 
     <!--/banner-info-->
@@ -54,17 +54,20 @@
               </div>
 
                 <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav pointer">
+                   <ul class="nav navbar-nav pointer">
 
-                    
-                    <li class="active"><a ui-sref="home">Home</a></li>
+                         <li class="active"><a ui-sref="home">Home</a></li>
                         <li><a   ui-sref="aboutus">About Us</a></li>
                         <li><a   ui-sref="product">Our Products</a></li>
                         <li><a   ui-sref="quality">Our Quality</a></li>
                         <li><a   ui-sref="partner-with-us">Partner With Us</a></li>
                         <li><a   ui-sref="article">Articles</a></li>
+                                                <li><a   ui-sref="store">Store</a></li>
+
 <!--                         <li><a   ui-sref="news">Updates</a></li>
- -->                        <li><a   ui-sref="contact">Contact Us</a></li>
+ -->                        <li ><a   ui-sref="contact">Contact Us</a></li>
+
+
                     </ul>
                 </div>
             
@@ -112,7 +115,7 @@
  <!--/banner-section-->
  <!---728x90--->
  <!-- About us -->
-    <div class="about-3">
+    <div class="about-3 container">
 <!--        <div class="container">
  -->            <div class="d-flex">
                 
@@ -165,7 +168,7 @@ respect to availability of high quality medicines.</p>
     
     <div class="capsuls">
 
-        <div class="container-fluid">
+        <div class="container">
             <div class="col-sm-6">
                 
 <img src="images/capsul.png" class="img-responsive">
@@ -391,86 +394,201 @@ everyone around happy and healthy.</p>
 
                 <!-- Clients -->
 
+<!-- Subscribe -->
+    <div class="wthree-subscribef-w3ls">
+        <div class="container">
+                                                <p class="alert alert-danger"  ng-show="successMessage" style="padding: 10px;  "><strong>{{successMessage}} </strong></p>
 
 
-    <!-- footer -->
-    <div class="footer_top_agileits">
-        <div class=" container-fluid">
-            <div class="col-md-3 footer_grid">
-                            <div class="img-logo-footer"><img src="images/logo.png" class="img-responsive"></div>
+                    <h3 class="heading-agileinfo">Partner With Us                      <span></span></h3>
+            <div class="">
+
+                         <form  name="myForm" novalidate ng-submit=save(myForm) class="form">
+                    <div class="textbox-item">
+                    <div class="col-md-6 col-sm-12">
+                    <input type="text" name="phone" ng-model="phone" class="form-control" placeholder="Contact Number..." ng-required="true">
+                    <span style="color:red; font-size: 12px;" ng-show="myForm.phone.$dirty && myForm.phone.$invalid">Phone Number is Required!</span>
+
+                </div>
+                    <div class="col-md-6  col-sm-12">
+                    <input type="email" name="email" ng-model="email" class="form-control" placeholder="Email address..." pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="textbox" ng-required="true">
+                    <span style="color:red;font-size: 12px; " ng-show="myForm.email.$dirty && myForm.email.$invalid">E-mail is Required!</span>
+
+                </div>
+            </div><br>
+        <br>
+        <br>
+
+
+                <div class="col-sm-12">
+
+                    <input type="submit" style="" ng-disabled="form.$invalid"  class="form-control submit-footer" value="Submit">
+                </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--// Subscribe -->
+
+    <footer class="footer1">
+<div class="container">
+
+<div class="row"><!-- row -->
+                       <div class="col-lg-3 col-md-3"><!-- widgets column left -->
+            
+                <ul class="list-unstyled clear-margins"><!-- widgets -->
                         
-            </div>
+                            <li class="widget-container widget_nav_menu"><!-- widgets list -->
+                    
+                                
+                                <ul>
 
+ <div class="footerp"> 
+                                   <img src="images/logo.png" class="img-responsive img-1">
 
-            <div class="col-md-3 col-sm-12 footer_grid ad">
-                <h3>Explore</h3>
-                <ul class="footer_grid_list pointer">
-                   
-                     <li ><a  ui-sref="home">Home</a></li>
-                        <li><a   ui-sref="aboutus">About Us</a></li>
-                        <li><a   ui-sref="product">Our Products</a></li>
-                        <li><a   ui-sref="quality">Our Quality</a></li>
-                        <li><a   ui-sref="partner-with-us">Partner With Us</a></li>
-                        <li><a   ui-sref="article">Articles</a></li>
-<!--                         <li ><a   ui-sref="news">Updates</a></li>
- -->                        <li><a   ui-sref="contact">Contact Us</a></li>
+                                
+                               <img src="images/sga-logo2.png" class="img-responsive img-2">
+                                </div>
+                      
+                    
                 </ul>
-            </div>
-            <div class="col-md-3 col-sm-12 footer_grid ad">
-                <h3>Contact Us</h3>
-                    <ul class="address">
-                    <li><i class="fa fa-map-marker" aria-hidden="true"></i>
+                     
+                      
+                </div><!-- widgets column left end -->
+                
+                <div class="col-lg-3 col-md-3"><!-- widgets column left -->
+                <ul class="list-unstyled clear-margins"><!-- widgets -->
+                        
+                            <li class="widget-container widget_nav_menu"><!-- widgets list -->
+                    
+                                <h1 class="title-widget">Explore</h1>
+                                
+                                <ul>
+ <li ><a  ui-sref="home"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                        <li><a   ui-sref="aboutus"><i class="fa fa-angle-double-right"></i>About Us</a></li>
+                        <li><a   ui-sref="product"><i class="fa fa-angle-double-right"></i>Our Products</a></li>
+                        <li><a   ui-sref="quality"><i class="fa fa-angle-double-right"></i>Our Quality</a></li>
+                        <li><a   ui-sref="partner-with-us"><i class="fa fa-angle-double-right"></i>Partner With Us</a></li>
+                        <li><a   ui-sref="article"><i class="fa fa-angle-double-right"></i>Articles</a></li>
 
+
+
+
+                               <!--     <li><a  href="#"><i class="fa fa-angle-double-right"></i> About Us</a></li>
+                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
+                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> Success Stories</a></li>
+                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> PG Courses</a></li>
+                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> Achiever's Batch</a></li>
+                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Regular Batch</a></li>
+                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Test & Discussion</a></li>
+                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Fast Track T & D</a></li> -->
+                                </ul>
+                    
+                            </li>
+                            
+                        </ul>
+                         
+                      
+                </div><!-- widgets column left end -->
+                
+                
+                
+               
+                
+                
+                
+                <div class="col-lg-3 col-md-3"><!-- widgets column left -->
+            
+                <ul class="list-unstyled clear-margins"><!-- widgets -->
+                        
+                            <li class="widget-container widget_nav_menu"><!-- widgets list -->
+                    
+                                <h1 class="title-widget">Contact Detail </h1>
+                                
+                                <ul>
+
+<ul class="address">
+<li><i class="fa fa-map-marker" aria-hidden="true"></i>
 Corporate Office :
-
-<span>13 th Floor, Pearl Best Heights-1, Netaji Subhash Place, Pitampura, New Delhi - 110 034</span>
-
-    <!-- <span>Management Office :</span>
-
-    <span>Apple Tree No. 3540/1, 1st Floor, Second Cross, HAL Indira Nagar, Bangalore - 560008</span>
-                             -->
+<p>13 th Floor, Pearl Best <br>Heights-1, Netaji Subhash<br> PlacePitampura, New Delhi - 110 034</p>
 </li>
 
+ <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@stayhappi.in</a></li>
+ <li><i class="fa fa-phone" aria-hidden="true"></i>18002707755</li>
+ <li><i class="fa fa-phone" aria-hidden="true"></i>011 40395204</li>
 
-                    <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@stayhappi.in</a></li>
-                    <li><i class="fa fa-phone" aria-hidden="true"></i>18002707755</li>
-                    <li><i class="fa fa-phone" aria-hidden="true"></i>011 40395204</li>
-
-
+                      
+                    
                 </ul>
+                     
+                      
+                </div><!-- widgets column left end -->
+                
+                
+                <div class="col-lg-3 col-md-3"><!-- widgets column center -->
+                
+                   
+                    
+                        <ul class="list-unstyled clear-margins"><!-- widgets -->
+                        
+                            <li class="widget-container widget_recent_news"><!-- widgets list -->
+                    
+                                <h1 class="title-widget">Social</h1>
+                                
+                               
+                                
+                                <div class="social-icons">
+                                
+                                    <ul class="nomargin">
+                                    
+                <a href="https://www.facebook.com/stayhappi.in/" target="_blank"><i class="fa fa-facebook-square fa-3x social-fb" id="social"></i></a>
+                <a href="https://twitter.com/SGunaushdhi" target="_blank"><i class="fa fa-twitter-square fa-3x social-tw" id="social"></i></a>
+
+               <!--  <a href="https://plus.google.com/+Bootsnipp-page"><i class="fa fa-google-plus-square fa-3x social-gp" id="social"></i></a>
+                <a href="mailto:bootsnipp@gmail.com"><i class="fa fa-envelope-square fa-3x social-em" id="social"></i></a>
+                                     -->
+                                    </ul>
+                                </div>
+                            </li>
+                          </ul>
+                       </div>
+                </div>
+</div>
+</footer>
+<!--header-->
+
+<div class="footer-bottom">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+                <div class="copyright">
+
+© 2018 stayhappi.in All rights reserved
+                </div>
+
             </div>
 
-            <div class="col-md-3 col-sm-12 footer_grid ad">
-                <h3>Social</h3>
-                <ul class="social">
-                    <li><a href="https://www.facebook.com/stayhappi.in/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-                    <li><a href="https://twitter.com/SGunaushdhi" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-                    <!-- <li><a href="https://plus.google.com/112529629485746569366 " target="_blank"><i class="fa fa-google-plus-square"></i></a></li>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
+                <div class="design">
+<!-- 
+                     <a href="#">Franchisee </a> |  <a target="_blank" href="http://www.webenlance.com">Web Design & Development by Webenlance</a> -->
 
-                    <li><a href="https://www.linkedin.com/in/sarva-gunaushdhi-831988157/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
- -->
+                </div>
 
-
-
-                </ul> 
-              <div class="sga-img">
-                <img src="images/sga-logo.png" class="img-responsive">
-                <p>An initiative by SarvaGunAushdhi Pvt. Ltd.</p>
-               </div>
             </div>
-            <div class="clearfix"> </div>
-            
+
         </div>
+
     </div>
-    <div class="footer_w3ls">
-        <div class="container">
-                    <div class="footer_bottom1">
-                        <p>© 2018 stayhappi.in All rights reserved  <a href="#"></a></p>
-                    </div>
-        </div>
-    </div>
-    <!-- //footer -->
+
+</div>
+    <!-- //footer--> 
    <script type="text/javascript">
         
         $(document).ready(function(){
