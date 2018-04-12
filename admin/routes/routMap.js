@@ -29,7 +29,6 @@ module.exports = function(app) {
               app.put('/API/faqedit',multipartMiddleware,faq.faq_edit);
 
 
-
               app.get('/API/articleget',article.list_all_);
               app.post('/API/article', multipartMiddleware,article.apiPOST);
               app.delete('/API/articleDelete', multipartMiddleware,article.articleDelete);
