@@ -29,7 +29,7 @@ $scope.save = function() {
 
 
         $http({ 
-            url :BASE_URL+'/subcription',
+            url :BASE_URL+'/notification',
             data :  payload,
             method : 'POST',
                 headers: {
