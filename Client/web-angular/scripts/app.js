@@ -80,22 +80,6 @@ angular
           }
         }
       })
-
-.state('home',{
-        controller: 'home',
-          url:'/home',
-        templateUrl:'views/home.html',
-        resolve: {
-          loadMyFiles:function($ocLazyLoad) {
-            return $ocLazyLoad.load({
-              name:'sbAdminApp',
-              files:['scripts/controllers/home.js']})
-          }
-        }
-      })
-
-
-      
       .state('aboutus',{
         templateUrl:'views/about.html',
         url:'/about-us'
