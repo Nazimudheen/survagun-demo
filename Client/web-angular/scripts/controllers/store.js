@@ -134,7 +134,7 @@ $scope.save1 = function() {
             data :  payload,
             method : 'POST',
                 headers: {
-                    'Content-type': undefined
+                    'Content-type': 'application/json'
                 }
             })
             .then(function(response) {
