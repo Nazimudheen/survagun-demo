@@ -13,7 +13,6 @@ var multipartMiddleware = multipart();
 
 module.exports = function(app) {
 
-              app.post('/API/demo',multipartMiddleware,mail.apiPOST);
               app.get('/API/newsget',news.list_all_);
               app.post('/API/news', multipartMiddleware,news.apiPOST);
               app.delete('/API/newsDelete', multipartMiddleware,news.newsDelete);
@@ -35,7 +34,7 @@ module.exports = function(app) {
               app.post('/API/article', multipartMiddleware,article.apiPOST);
               app.delete('/API/articleDelete', multipartMiddleware,article.articleDelete);
               app.put('/API/articleedit',multipartMiddleware,article.article_edit);
-              app.post('/API/contact',multipartMiddleware,contact.apiPOST);
+              app.post('/API/demo',multipartMiddleware,contact.apiPOST);
 
 
               app.post('/API/login',user.login);
