@@ -54,7 +54,10 @@ transporter.sendMail(mailOptions, function(error, info){
 
 
 
+contactCtrl.Dr = function (req, res) {
+          res.json({msg : "successfull"})
 
+}
 
 
 contactCtrl.list_all_ = function(req, res) {
