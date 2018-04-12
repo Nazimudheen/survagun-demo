@@ -36,7 +36,7 @@ module.exports = function(app) {
 
               app.post('/API/contact',multipartMiddleware,contact.apiPOST);
 
-              app.post('/API/Mail',multipartMiddleware,contact.Dr);
+              // app.post('/API/Mail',multipartMiddleware,contact.Dr);
              
 
               app.post('/API/login',user.login);
