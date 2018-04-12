@@ -3,7 +3,7 @@ angular.module('sbAdminApp')
 
  
 
-
+console.log(BASE_URL);
 
 
 

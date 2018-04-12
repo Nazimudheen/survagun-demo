@@ -79,18 +79,19 @@ articleCtrl.article_edit = function(req, res) {
   var bookmarkId =  req.body.Index || ''
   Article.findOneAndUpdate({_id: bookmarkId}, req.body, {new: true}, function(err, article) {
 
-
 if(err){
     res.status = 500;
     res.json({err : err})
-    }else{
-
+    } else{
+      fs.copy(req.files.file.path, BASE_DIR+"/"+req.files.file.originalFilename , function (err) {
+        if(err){
+          res.status = 500;
+          res.json({err : err})
+        } else{
           res.json({msg : "OK"})
-
+        }
+      })
     }
-
-    
-
   });
 };
 

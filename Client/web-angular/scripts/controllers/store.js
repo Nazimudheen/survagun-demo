@@ -78,13 +78,14 @@ $scope.save = function() {
     $scope.email = "";
     $scope.phone = "";
     $scope.message = "";
-
-        $scope.successMessage = 'Successfully Added We will Contact Soon !';
-        $scope.successMessagebool = true;
-        $timeout(function () {
-            $scope.successMessagebool = false;
+        $scope.myForm.$setValidity();
+        $scope.myForm.$setPristine();
+        $scope.myForm.$setUntouched(); 
+        $scope.successMessage = 'Thank you For reaching to us. We will contact you soon!';
+      $timeout(function () {
+       $scope.successMessage = false;
        window.location.replace("#/contact");
-        }, 1000);
+            }, 2000);
         }else{
 
 
