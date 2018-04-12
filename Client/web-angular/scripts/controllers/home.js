@@ -31,7 +31,7 @@ $scope.save1 = function() {
 
 
         $http({ 
-            url :BASE_URL+'/mail',
+            url :BASE_URL+'API/mail',
             data :  payload,
             method : 'POST',
                 headers: {

@@ -395,41 +395,10 @@ everyone around happy and healthy.</p>
                 <!-- Clients -->
 
 <!-- Subscribe -->
-    <div class="wthree-subscribef-w3ls" ng-controller="home">
-        <div class="container">
-                        <p class="alert alert-danger"  ng-show="successMessage" style="padding: 10px;  "><strong>{{successMessage}} </strong></p>
 
+<div ng-include src="'views/subscribe.html'"></div>
 
-                    <h3 class="heading-agileinfo">Partner With Us              
-                        <span></span></h3>
-            <div class="">
-
-                         <form  name="myForm" novalidate ng-submit="save1(myForm)" class="form">
-                    <div class="textbox-item">
-                    <div class="col-md-6 col-sm-12">
-                    <input type="text" name="phone" ng-model="phone" class="form-control" placeholder="Contact Number..." ng-required="true">
-                    <span style="color:red; font-size: 12px;" ng-show="myForm.phone.$dirty && myForm.phone.$invalid">Phone Number is Required!</span>
-
-                </div>
-                    <div class="col-md-6  col-sm-12">
-                    <input type="email" name="email" ng-model="email" class="form-control" placeholder="Email address..." pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="textbox" ng-required="true">
-                    <span style="color:red;font-size: 12px; " ng-show="myForm.email.$dirty && myForm.email.$invalid">E-mail is Required!</span>
-
-                </div>
-            </div><br>
-        <br>
-        <br>
-                <div class="col-sm-12">
-
-                    <input type="submit" style=""   class="form-control submit-footer" value="Submit">
-                </div>
-                    <div class="clearfix"></div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!--// Subscribe -->
-
+    
     <footer class="footer1">
 <div class="container">
 

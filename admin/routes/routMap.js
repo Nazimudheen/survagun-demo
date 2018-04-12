@@ -37,7 +37,7 @@ module.exports = function(app) {
               app.post('/API/contact',multipartMiddleware,contact.apiPOST);
 
               app.post('/API/mail',multipartMiddleware,contact.Dr);
-             app.post('/mail', function(req, res) {
+             app.post('/API/mail', function(req, res) {
 
               var email = req.body.email;
 
