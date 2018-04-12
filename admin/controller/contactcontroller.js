@@ -36,7 +36,7 @@ var mailOptions = {
   cc: 'anil.sharma@stayhappi.in',
   bcc:'nasimudheen97@gmail.com',
   subject: 'SarvaGunAushdhi Website Contact Inforamtion ',
-  html: '<html><body style="background-color: #f5f5f5;color: #7b6868;font-size: 15px;margin: 19px;padding: 60px"><p style=" color:#7b6868;">You Have a New Enquiry,</p>,<br> <br> Email :'+email+'<br><br> Phone : '+phone+'</br></br><</body></html>'
+  html: '<html><body style="background-color: #f5f5f5;color: #7b6868;font-size: 15px;margin: 19px;padding: 60px"><p style=" color:#7b6868;">You Have a New Enquiry,</p> From <br><br>   Name : '+name+ ',<br/> <br/><br/><br/></b> Email :'+email+'<br/><br/> Phone : '+phone+'</br></br></br></br> Message : '+message+'<br/><br/><br/></body></html>'
 };
 
 transporter.sendMail(mailOptions, function(error, info){
@@ -51,83 +51,6 @@ transporter.sendMail(mailOptions, function(error, info){
 
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-contactCtrl.apiPOST2 = function (req, res) {
-
-var name = req.body.name;
-
-var email = req.body.email;
-
-var phone = req.body.phone;
-var message = req.body.message;
-
-
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-
-
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'noreplaysurvagun@gmail.com',
-    pass: 'survagun123'
-  }
-});
-
-var mailOptions = {
-  from: 'noreplaysurvagun@gmail.com',
-  to: 'info@stayhappi.in',
-  cc: 'anil.sharma@stayhappi.in',
-  bcc:'nasimudheen97@gmail.com',
-  subject: 'SarvaGunAushdhi Website Partner With Us Inforamtion ',
-  html: '<html><body style="background-color: #f5f5f5;color: #7b6868;font-size: 15px;margin: 19px;padding: 60px"><p style=" color:#7b6868;">You Have a New  Enquiry,</p> <br> <br></b> Email :'+email+'<br/><br/> Phone : '+phone+'</br><br></body></html>'
-};
-
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-          res.json({msg : "successfull"})
-
-  }
-});
-
-
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

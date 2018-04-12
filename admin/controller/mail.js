@@ -10,12 +10,10 @@ var mailCtrl = {};
 
 mailCtrl.apiPOST = function (req, res) {
 
-var name = req.body.name;
 
 var email = req.body.email;
 
 var phone = req.body.phone;
-var message = req.body.message;
 
 
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
@@ -34,21 +32,19 @@ var mailOptions = {
   to: 'info@stayhappi.in',
   cc: 'anil.sharma@stayhappi.in',
   bcc:'nasimudheen97@gmail.com',
-  subject: 'SarvaGunAushdhi Website Contact Inforamtion ',
-  html: '<html><body style="background-color: #f5f5f5;color: #7b6868;font-size: 15px;margin: 19px;padding: 60px"><p style=" color:#7b6868;">You Have a New Enquiry,</p> From <br><br> Name : '+name+ ',<br/> <br/><br/><br/></b> Email :'+email+'<br/><br/> Phone : '+phone+'</br></br></br></br> Message : '+message+'<br/><br/><br/></body></html>'
+  subject: 'SarvaGunAushdhi Website mail Inforamtion ',
+  html: '<html><body style="background-color: #f5f5f5;color: #7b6868;font-size: 15px;margin: 19px;padding: 60px"><p style=" color:#7b6868;">You Have a New Enquiry,</p><br/><br/></b> Email :'+email+'<br/><br/> Phone : '+phone+'</br></br></br><br/></body></html>'
 };
 
 transporter.sendMail(mailOptions, function(error, info){
   if (error) {
     console.log(error);
   } else {
-    console.log('Email sent: ' + info.response);
+          console.log('Email sent: ' + info.response);
           res.json({msg : "successfull"})
 
   }
 });
-
-
 };
 
 
