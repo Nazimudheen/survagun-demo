@@ -29,7 +29,7 @@ $scope.save = function() {
 
 
         $http({ 
-            url :BASE_URL+'/notification',
+            url :BASE_URL+'/contact',
             data :  payload,
             method : 'POST',
                 headers: {
