@@ -33,12 +33,11 @@ module.exports = function(app) {
               app.post('/API/article', multipartMiddleware,article.apiPOST);
               app.delete('/API/articleDelete', multipartMiddleware,article.articleDelete);
               app.put('/API/articleedit',multipartMiddleware,article.article_edit);
-              
-              app.post('/API/contact2',multipartMiddleware,contact.apiPOST2);
+
+              app.post('/API/contact',multipartMiddleware,contact.apiPOST);
 
               app.post('/API/login',user.login);
 
-              // app.post('/apilogin',multipartMiddleware,user.apiPOST);
 
        
 };
