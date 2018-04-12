@@ -33,8 +33,8 @@ module.exports = function(app) {
               app.post('/article', multipartMiddleware,article.apiPOST);
               app.delete('/articleDelete', multipartMiddleware,article.articleDelete);
               app.put('/articleedit',multipartMiddleware,article.article_edit);
-  app.post('/API/contact',multipartMiddleware,contact.apiPOST);
-              app.post('/API/notification',multipartMiddleware,contact.notification);
+                app.post('/API/contact',multipartMiddleware,contact.apiPOST);
+              app.post('/API/notification',contact.notification);
               app.post('/login',user.login);
 
               // app.post('/apilogin',multipartMiddleware,user.apiPOST);
