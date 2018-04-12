@@ -63,7 +63,7 @@ $scope.save = function() {
         payload.append("message", $scope.message);
 
         $http({ 
-            url :BASE_URL+'/contact',
+            url :BASE_URL+'/contact2',
             data :  payload,
             method : 'POST',
                 headers: {
