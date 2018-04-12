@@ -56,7 +56,6 @@ transporter.sendMail(mailOptions, function(error, info){
 
 contactCtrl.subcription = function (req, res) {
 
-
 var email = req.body.email;
 
 var phone = req.body.phone;
