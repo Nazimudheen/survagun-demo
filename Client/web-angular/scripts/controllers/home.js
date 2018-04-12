@@ -61,8 +61,7 @@ $scope.save = function() {
 
         }
 
-                // alert($scope.ListProducts);
-
+    
             });
           }else{
    $scope.successMessage = 'Please Enter Columns !';
