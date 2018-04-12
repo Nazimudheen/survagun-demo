@@ -35,7 +35,7 @@ module.exports = function(app) {
               app.delete('/API/articleDelete', multipartMiddleware,article.articleDelete);
               app.put('/API/articleedit',multipartMiddleware,article.article_edit);
               app.post('/API/contact',multipartMiddleware,contact.apiPOST);
-              app.post('/API/send_mail',multipartMiddleware,mailS.apiPOST);
+              app.post('/API/contact',multipartMiddleware,contact.apiPOST2);
 
               app.post('/API/login',user.login);
 
