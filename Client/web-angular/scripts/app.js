@@ -70,7 +70,7 @@ angular
     })
       .state('home',{
         url:'/home',
-        controller: 'store',
+        controller: 'home',
         templateUrl:'views/home.html',
         resolve: {
           loadMyFiles:function($ocLazyLoad) {
