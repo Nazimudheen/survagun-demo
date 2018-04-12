@@ -131,7 +131,7 @@ $scope.save1 = function() {
 
 
         $http({ 
-            url :BASE_URL+'/demo',
+            url :BASE_URL+'/send_mail',
             data :  payload,
             method : 'POST',
                 headers: {
