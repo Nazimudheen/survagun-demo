@@ -70,14 +70,13 @@ angular
     })
       .state('home',{
         url:'/home',
-        controller: 'home',
+        controller: 'store',
         templateUrl:'views/home.html',
         resolve: {
           loadMyFiles:function($ocLazyLoad) {
             return $ocLazyLoad.load({
               name:'sbAdminApp',
-              files:['scripts/controllers/home.js'                  
-                    ]})
+              files:['scripts/controllers/store.js']})
           }
         }
       })
