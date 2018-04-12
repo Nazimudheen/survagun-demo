@@ -30,19 +30,7 @@ var transporter = nodemailer.createTransport({
   }
 });
 
-if (name) {
-var mailOptions = {
-  from: 'noreplaysurvagun@gmail.com',
-  to: 'info@stayhappi.in',
-  cc: 'anil.sharma@stayhappi.in',
-  bcc:'nasimudheen97@gmail.com',
-  subject: 'SarvaGunAushdhi Website Contact Inforamtion ',
-  html: '<html><body style="background-color: #f5f5f5;color: #7b6868;font-size: 15px;margin: 19px;padding: 60px"><p style=" color:#7b6868;">You Have a New Enquiry,</p> From <br><br>   Name : '+name+ ',<br/> <br/><br/><br/></b> Email :'+email+'<br/><br/> Phone : '+phone+'</br></br></br></br> Message : '+message+'<br/><br/><br/></body></html>'
-};
-
-
-} else {
-
+if(typeof name === 'undefined'){
 
 var mailOptions = {
   from: 'noreplaysurvagun@gmail.com',
@@ -51,6 +39,18 @@ var mailOptions = {
   bcc:'nasimudheen97@gmail.com',
   subject: 'SarvaGunAushdhi Website Partner With Us Inforamtion ',
   html: '<html><body style="background-color: #f5f5f5;color: #7b6868;font-size: 15px;margin: 19px;padding: 60px"><p style=" color:#7b6868;">You Have a New Enquiry,</p> <br></br> Email :'+email+'<br><br> Phone : '+phone+'</br></br><br/></body></html>'
+};
+
+
+} else {
+
+var mailOptions = {
+  from: 'noreplaysurvagun@gmail.com',
+  to: 'info@stayhappi.in',
+  cc: 'anil.sharma@stayhappi.in',
+  bcc:'nasimudheen97@gmail.com',
+  subject: 'SarvaGunAushdhi Website Contact Inforamtion ',
+  html: '<html><body style="background-color: #f5f5f5;color: #7b6868;font-size: 15px;margin: 19px;padding: 60px"><p style=" color:#7b6868;">You Have a New Enquiry,</p> From <br><br>   Name : '+name+ ',<br/> <br/><br/><br/></b> Email :'+email+'<br/><br/> Phone : '+phone+'</br></br></br></br> Message : '+message+'<br/><br/><br/></body></html>'
 };
 
 
