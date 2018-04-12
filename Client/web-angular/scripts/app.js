@@ -76,7 +76,7 @@ angular
           loadMyFiles:function($ocLazyLoad) {
             return $ocLazyLoad.load({
               name:'sbAdminApp',
-              files:['scripts/controllers/store.js']})
+              files:['scripts/controllers/home.js']})
           }
         }
       })
