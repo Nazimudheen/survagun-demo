@@ -45,11 +45,11 @@ $scope.save = function() {
         $scope.myForm.$setPristine();
         $scope.myForm.$setUntouched(); 
 
-        $scope.successMessage = ' Your Subcription Successfully!';
+        $scope.successMessage = ' Thank You We Will Get Back to You Soon!';
      $timeout(function () {
                                     $scope.successMessage = false;
        window.location.replace("#/home");
-                                }, 1000);
+                                }, 2000);
         }else{
 
 

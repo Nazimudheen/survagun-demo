@@ -3311,8 +3311,9 @@ font-family: 'Roboto';    margin-top: 0;
 
 .footerp p {font-family: 'Roboto', sans-serif; }
 
-.img-1{width: 168px;}
-.img-2{width: 140px;}
+.img-1{width: 220px;}
+.img-2{width: 120px;
+margin: 10px;}
 
 #social:hover {
                 -webkit-transform:scale(1.1); 
