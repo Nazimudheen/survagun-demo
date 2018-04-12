@@ -62,7 +62,7 @@ $scope.save = function() {
 
         payload.append("message", $scope.message);
 
-
+console.log(BASE_URL+'/contact');
         $http({ 
             url :BASE_URL+'/contact',
             data :  payload,
