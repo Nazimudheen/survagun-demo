@@ -31,7 +31,7 @@ $scope.save1 = function() {
 
 
         $http({ 
-            url :BASE_URL+'/contact',
+            url :BASE_URL+'/mail',
             data :  payload,
             method : 'POST',
                 headers: {

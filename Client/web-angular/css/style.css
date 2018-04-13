@@ -3816,7 +3816,7 @@ h6.caption {
     .contact-logo {
 }
 
-.footer1{padding-left: 0px;}
+.footer1{padding-left: 0px !important;}
 .led img{    margin: 0px auto auto auto;}
 
 
@@ -4818,7 +4818,7 @@ ul.nav.navbar-nav li a{
 }
 
 
-.footer1{padding-left: 85px;}
+.footer1{padding-left: 45px !important;}
 }
 
 
