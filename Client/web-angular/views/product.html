@@ -1,78 +1,8 @@
 
 <!--/main-header-->
-<div class="baner-product" >
-	
-	<!--/banner-info-->
-	  <div class="header">
-		<div class="w3-agile-logo">
-			<div class="container">
-				<div class=" head-wl">
-					<div class="headder-w3">
-						<h1><a  ui-sref="home"><img src="images/logo.png" class="img-responsive"/></a></h1>
-					</div>
+<div class="baner-product" ng-controller="products">
+  <div ng-include="'views/header.html'"></div>
 
-					<div class="w3-header-top-right-text">
-						<!-- <h6 class="caption"> Contact Us</h6>
-						<p>(111)+245 245 66</p> -->
-					</div>
-
-					<div class="email-right">
-						<!-- <h6 class="caption">Email Us</h6>
-						<p><a href="mailto:mail@example.com" class="info"> info@example.com</a></p> -->
-
-					</div>
-
-
-					<div class="agileinfo-social-grids">
-						<h6 class="caption">Toll Free Number</h6>
-						<ul>
-							<li><a href="#"><strong>18002707755</strong></a></li>
-							
-						</ul>
-					</div>
-
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-				
-		</div>
-		<div class="top-nav">
-		<div class="top-nav" style="display: relative;">
-        <nav class="navbar navbar-default navbar-fixed-top w3-post-nav-menu" >
-	<!-- //header -->
-	<div class="container">
-			<div class="navbar-header">
-	   			 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	                <span class="sr-only">Toggle navigation</span>
-	                <span class="icon-bar"></span>
-	                <span class="icon-bar"></span>
-	                <span class="icon-bar"></span>
-                </button>
-              </div>
-
-				<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav pointer">
-
-             <li ><a ui-sref="home">Home</a></li>
-                        <li><a   ui-sref="aboutus">About Us</a></li>
-                        <li class="active"> <a   ui-sref="product">Our Products</a></li>
-                        <li><a   ui-sref="quality">Our Quality</a></li>
-                        <li><a   ui-sref="partner-with-us">Partner With Us</a></li>
-                        <li><a   ui-sref="article">Articles</a></li>
-
-<!--                         <li><a   ui-sref="news">Updates</a></li>
- -->                        <li ><a   ui-sref="contact">Contact Us</a></li>
-
-
-          </ul>
-				</div>
-			
-			</div>
-			<div class="clearfix"> </div>
-			</nav>	
-		</div>
-	  </div>
-	</div>
 		<div class="w3-banner-head-info">
 
 				<div class="container">
@@ -114,43 +44,43 @@
 
 	<div class="  col-sm-12 table-responsive" > 
 <div style="overflow-x:auto;">
-<table class="table tb-product table-hover ">
+<table class="table tb-product  ">
  
     <tbody>
       <tr scope="col" style=" font-weight: 500; color: #000;">
-         <td >Antibiotics</td>
-        <td>Cough & Cold Preparations</td>
-        <td>Paediatrics</td>
+         <td class="hover_intd">Antibiotics</td>
+        <td class="hover_intd">Cough & Cold Preparations</td>
+        <td class="hover_intd">Paediatrics</td>
       </tr>
       <tr style=" font-weight: 500; color: #000;">
-        <td>Anti Hypertensives</td>
-        <td>Pain Management</td>
-        <td>Pre & Probiotics</td>
+        <td class="hover_intd">Anti Hypertensives</td>
+        <td class="hover_intd">Pain Management</td>
+        <td class="hover_intd">Pre & Probiotics</td>
       </tr>      
       <tr  style="font-weight: 500">
-        <td>Anti-amoebics</td>
-        <td>Geriatric Care</td>
-        <td>Dermatological</td>
+        <td class="hover_intd">Anti-amoebics</td>
+        <td class="hover_intd">Geriatric Care</td>
+        <td class="hover_intd">Dermatological</td>
       </tr>
       <tr style="  font-weight: 500; color: #000;">
-        <td>CVS and Dyslipidaemia</td>
-        <td>Respiratory</td>
-        <td>Ophthalmic</td>
-      </tr>
+        <td class="hover_intd">CVS and Dyslipidaemia</td>
+        <td class="hover_intd">Respiratory</td>
+        <td class="hover_intd">Ophthalmic</td>
+      </tr >
       <tr  style="font-weight: 500">
-        <td>Hormones</td>
-        <td>Gastrointestinal Tract (GIT)</td>
-        <td>Antiepileptic</td>
+        <td class="hover_intd">Hormones</td>
+        <td class="hover_intd">Gastrointestinal Tract (GIT)</td>
+        <td class="hover_intd">Antiepileptic</td>
       </tr>
       <tr style="  font-weight: 500; color: #000;">
-        <td>CNS</td>
-        <td>Urological</td>
-        <td>Anti diabetics</td>
+        <td class="hover_intd">CNS</td>
+        <td class="hover_intd">Urological</td>
+        <td class="hover_intd">Anti diabetics</td>
       </tr>
       <tr  style="font-weight: 500">
-        <td>Antipyretics</td>
-        <td>Gynaecology</td>
-        <td>Sedatives  / Hypnotics</td>
+        <td class="hover_intd">Antipyretics</td>
+        <td  class="hover_intd">Gynaecology</td>
+        <td class="hover_intd"> Sedatives  / Hypnotics</td>
       </tr>
     </tbody>
   </table>	
@@ -273,166 +203,4 @@ Devices<span></span></h3>
 
 
 
-    <!-- footer -->
-    <div class="footer_top_agileits">
-
-    <!-- footer -->
-    <footer class="footer1">
-<div class="container">
-
-<div class="row"><!-- row -->
-                       <div class="col-lg-3 col-md-3"><!-- widgets column left -->
-            
-                <ul class="list-unstyled clear-margins"><!-- widgets -->
-                        
-                          <li class="widget-container widget_nav_menu"><!-- widgets list -->
-                    
-                                
-                                <ul>
-
- <div class="footerp"> 
-                                 <img src="images/logo.png" class="img-responsive img-1">
-
-                                
-                               <img src="images/sga-logo2.png" class="img-responsive img-2">
-                                </div>
-                      
-                    
-                </ul>
-                     
-                      
-                </div><!-- widgets column left end -->
-                
-                <div class="col-lg-3 col-md-3"><!-- widgets column left -->
-                <ul class="list-unstyled clear-margins"><!-- widgets -->
-                        
-                          <li class="widget-container widget_nav_menu"><!-- widgets list -->
-                    
-                                <h1 class="title-widget">Explore</h1>
-                                
-                                <ul>
- <li ><a  ui-sref="home"><i class="fa fa-angle-double-right"></i>Home</a></li>
-                        <li><a   ui-sref="aboutus"><i class="fa fa-angle-double-right"></i>About Us</a></li>
-                        <li><a   ui-sref="product"><i class="fa fa-angle-double-right"></i>Our Products</a></li>
-                        <li><a   ui-sref="quality"><i class="fa fa-angle-double-right"></i>Our Quality</a></li>
-                        <li><a   ui-sref="partner-with-us"><i class="fa fa-angle-double-right"></i>Partner With Us</a></li>
-                        <li><a   ui-sref="article"><i class="fa fa-angle-double-right"></i>Articles</a></li>
-
-
-
-
-                               <!--   <li><a  href="#"><i class="fa fa-angle-double-right"></i> About Us</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> Success Stories</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> PG Courses</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> Achiever's Batch</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Regular Batch</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Test & Discussion</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Fast Track T & D</a></li> -->
-                                </ul>
-                    
-              </li>
-                            
-                        </ul>
-                         
-                      
-                </div><!-- widgets column left end -->
-                
-                
-                
-               
-                
-                
-                
-                <div class="col-lg-3 col-md-3"><!-- widgets column left -->
-            
-                <ul class="list-unstyled clear-margins"><!-- widgets -->
-                        
-                          <li class="widget-container widget_nav_menu"><!-- widgets list -->
-                    
-                                <h1 class="title-widget">Contact Detail </h1>
-                                
-                                <ul>
-
-<ul class="address">
-<li><i class="fa fa-map-marker" aria-hidden="true"></i>
-Corporate Office :
-<p>13 th Floor, Pearl Best <br>Heights-1, Netaji Subhash<br> PlacePitampura, New Delhi - 110 034</p>
-</li>
-
- <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@stayhappi.in</a></li>
- <li><i class="fa fa-phone" aria-hidden="true"></i>18002707755</li>
- <li><i class="fa fa-phone" aria-hidden="true"></i>011 40395204</li>
-
-                      
-                    
-                </ul>
-                     
-                      
-                </div><!-- widgets column left end -->
-                
-                
-                <div class="col-lg-3 col-md-3"><!-- widgets column center -->
-                
-                   
-                    
-                        <ul class="list-unstyled clear-margins"><!-- widgets -->
-                        
-                          <li class="widget-container widget_recent_news"><!-- widgets list -->
-                    
-                                <h1 class="title-widget">Social</h1>
-                                
-                               
-                                
-                                <div class="social-icons">
-                                
-                                  <ul class="nomargin">
-                                    
-                <a href="https://www.facebook.com/stayhappi.in/" target="_blank"><i class="fa fa-facebook-square fa-3x social-fb" id="social"></i></a>
-              <a href="https://twitter.com/SGunaushdhi" target="_blank"><i class="fa fa-twitter-square fa-3x social-tw" id="social"></i></a>
-
-             <!--  <a href="https://plus.google.com/+Bootsnipp-page"><i class="fa fa-google-plus-square fa-3x social-gp" id="social"></i></a>
-              <a href="mailto:bootsnipp@gmail.com"><i class="fa fa-envelope-square fa-3x social-em" id="social"></i></a>
-                                     -->
-                                    </ul>
-                                </div>
-                        </li>
-                          </ul>
-                       </div>
-                </div>
-</div>
-</footer>
-<!--header-->
-
-<div class="footer-bottom">
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-
-        <div class="copyright">
-
-© 2018 stayhappi.in All rights reserved
-        </div>
-
-      </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-
-        <div class="design">
-<!-- 
-           <a href="#">Franchisee </a> |  <a target="_blank" href="http://www.webenlance.com">Web Design & Development by Webenlance</a> -->
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-    <!-- //footer 
-    <!-- //footer -->
+  <div ng-include="'views/footer.html'"></div>

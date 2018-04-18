@@ -1,79 +1,10 @@
 <div class="baner-product" ng-controller="News">
 	
-	<!--/banner-info-->
-	  <div class="header">
-		<div class="w3-agile-logo">
-			<div class="container">
-				<div class=" head-wl">
-					<div class="headder-w3">
-						<h1><a  ui-sref="home"><img src="images/logo.png" class="img-responsive"/></a></h1>
-					</div>
+<div ng-include="'views/header.html'"></div>
 
-					<div class="w3-header-top-right-text">
-						<!-- <h6 class="caption"> Contact Us</h6>
-						<p>(111)+245 245 66</p> -->
-					</div>
-
-					<div class="email-right">
-						<!-- <h6 class="caption">Email Us</h6>
-						<p><a href="mailto:mail@example.com" class="info"> info@example.com</a></p> -->
-
-					</div>
-
-
-					<div class="agileinfo-social-grids">
-						<h6 class="caption">Toll Free Number</h6>
-						<ul>
-							<li><a href="#"><strong>18002707755</strong></a></li>
-							
-						</ul>
-					</div>
-
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-				
-		</div>
-
-        <div class="top-nav" style="display: relative;">
-        <nav class="navbar navbar-default navbar-fixed-top w3-post-nav-menu" >
-	<!-- //header -->
-	<div class="container">
-			<div class="navbar-header">
-	   			 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	                <span class="sr-only">Toggle navigation</span>
-	                <span class="icon-bar"></span>
-	                <span class="icon-bar"></span>
-	                <span class="icon-bar"></span>
-                </button>
-              </div>
-
-				<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav pointer">
-
-             <li ><a ui-sref="home">Home</a></li>
-                        <li><a   ui-sref="aboutus">About Us</a></li>
-                        <li><a   ui-sref="product">Our Products</a></li>
-                        <li><a   ui-sref="quality">Our Quality</a></li>
-                        <li><a   ui-sref="partner-with-us">Partner With Us</a></li>
-                        <li><a   ui-sref="article">Articles</a></li>
-                                                <li><a   ui-sref="store">Store</a></li>
-
-<!--                         <li><a   ui-sref="news">Updates</a></li>
- -->                        <li><a   ui-sref="contact">Contact Us</a></li>
-
-
-          </ul>
-				</div>
-			
-			</div>
-			<div class="clearfix"> </div>
-			</nav>	
-		</div>
-	  </div>
 		<div class="w3-banner-head-info">
 
-				<div class="container-fluid">
+				<div class="container">
 																				<h3 class="heading-agileinfo-news">News <span></span></h3>
 
 
@@ -85,47 +16,47 @@
 
 		</div>
 </div>
- <!--/banner-section-->
-	<div class="agileits-about-top">
+  <!--/banner-section-->
+  <div class="agileits-about-top">
 
-		<div class="container-fluid">
+    <div class="container">
 
-			<div class="col-md-9">
+      <div class="col-md-9">
 
-			<div class="agileinfo-top-grids">
-				<div class="col-sm-3 wthree-top-grid op" ng-repeat="x in content | filter:paginate">
-				<a ng-click="edit(x._id,x.Image,x.heading,x.subheading,x.description)">	<img src="admin/Local_FS/news/{{x.Image}}" class="img-responsive image-grid image" alt="" />
+      <div class="agileinfo-top-grids">
+        <div class="col-sm-4 wthree-top-grid op" ng-repeat="x in content | filter:paginate">
+        <a ng-click="edit(x._id,x.Image,x.heading,x.subheading,x.description)">  <img src="admin/Local_FS/news/{{x.Image}}" class="img-responsive image-grid image" alt="" />
                    <div class="overlay">
                        <div class="text"><i class="fa fa-plus-square"></i></div>
                    </div>
-					<h4>{{x.heading}}</h4>
-<!-- 					<p>Pellentesque auctor euismod lectus a pretium..</p>
- -->					</a>
-				</div>
-				
-				<div class="col-sm-12">
+          <p data-dd-collapse-text="1">{{x.heading | limitTo:58 }} ....</p>
+<!--          <p>Pellentesque auctor euismod lectus a pretium..</p>
+ -->          </a>
+        </div>
+        
+        <div class="col-sm-12">
                   <nav>
-						<pagination total-items="totalItems" ng-model="currentPage"
+            <pagination total-items="totalItems" ng-model="currentPage"
           max-size="5" boundary-links="true"
           items-per-page="numPerPage" class="pagination-sm">
         </pagination>
-					</nav>
+          </nav>
         </div>
 
-				<div class="clearfix"> </div>
-			</div>
-			</div>
+        <div class="clearfix"> </div>
+      </div>
+      </div>
      <div class="col-md-3">
           <div class="latest">
             <div class="lates-post">Latest Post</div>
 
 <div class="media" ng-repeat="y in content | limitTo:5 | orderBy:'+':true">
-  <a ng-click="edit(y._id,y.Image,y.heading,y.subheading,y.description)">	  <div class="media-left media-top">
+  <a ng-click="edit(y._id,y.Image,y.heading,y.subheading,y.description)">   <div class="media-left media-top">
       <img src="admin/Local_FS/news/{{y.Image}}" class="media-object" style="width:80px">
     </div>
     <div class="media-body">
-      <h4 class="media-heading">{{y.heading}}</h4>
-      <p>{{y.subheading}}</p>
+      <p class="media-heading">{{y.heading | limitTo:30 }}....</p>
+     
      
     </div></a>
   </div>
@@ -137,168 +68,9 @@
     </div>
 
 
-		</div>
-	</div>
-	<!-- //about-top -->
-    <!-- footer -->
-
-    <!-- footer -->
-    <footer class="footer1">
-<div class="container">
-
-<div class="row"><!-- row -->
-                       <div class="col-lg-3 col-md-3"><!-- widgets column left -->
-            
-                <ul class="list-unstyled clear-margins"><!-- widgets -->
-                        
-                          <li class="widget-container widget_nav_menu"><!-- widgets list -->
-                    
-                                
-                                <ul>
-
- <div class="footerp"> 
-                                 <img src="images/logo.png" class="img-responsive img-1">
-
-                                
-                               <img src="images/sga-logo2.png" class="img-responsive img-2">
-                                </div>
-                      
-                    
-                </ul>
-                     
-                      
-                </div><!-- widgets column left end -->
-                
-                <div class="col-lg-3 col-md-3"><!-- widgets column left -->
-                <ul class="list-unstyled clear-margins"><!-- widgets -->
-                        
-                          <li class="widget-container widget_nav_menu"><!-- widgets list -->
-                    
-                                <h1 class="title-widget">Explore</h1>
-                                
-                                <ul>
- <li ><a  ui-sref="home"><i class="fa fa-angle-double-right"></i>Home</a></li>
-                        <li><a   ui-sref="aboutus"><i class="fa fa-angle-double-right"></i>About Us</a></li>
-                        <li><a   ui-sref="product"><i class="fa fa-angle-double-right"></i>Our Products</a></li>
-                        <li><a   ui-sref="quality"><i class="fa fa-angle-double-right"></i>Our Quality</a></li>
-                        <li><a   ui-sref="partner-with-us"><i class="fa fa-angle-double-right"></i>Partner With Us</a></li>
-                        <li><a   ui-sref="article"><i class="fa fa-angle-double-right"></i>Articles</a></li>
-
-
-
-
-                               <!--   <li><a  href="#"><i class="fa fa-angle-double-right"></i> About Us</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> Success Stories</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> PG Courses</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> Achiever's Batch</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Regular Batch</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Test & Discussion</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Fast Track T & D</a></li> -->
-                                </ul>
-                    
-              </li>
-                            
-                        </ul>
-                         
-                      
-                </div><!-- widgets column left end -->
-                
-                
-                
-               
-                
-                
-                
-                <div class="col-lg-3 col-md-3"><!-- widgets column left -->
-            
-                <ul class="list-unstyled clear-margins"><!-- widgets -->
-                        
-                          <li class="widget-container widget_nav_menu"><!-- widgets list -->
-                    
-                                <h1 class="title-widget">Contact Detail </h1>
-                                
-                                <ul>
-
-<ul class="address">
-<li><i class="fa fa-map-marker" aria-hidden="true"></i>
-Corporate Office :
-<p>13 th Floor, Pearl Best Heights-1,<br> Netaji Subhash PlacePitampura,<br> New Delhi - 110 034</p>
-</li>
-
- <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@stayhappi.in</a></li>
- <li><i class="fa fa-phone" aria-hidden="true"></i>18002707755</li>
- <li><i class="fa fa-phone" aria-hidden="true"></i>011 40395204</li>
-
-                      
-                    
-                </ul>
-                     
-                      
-                </div><!-- widgets column left end -->
-                
-                
-                <div class="col-lg-3 col-md-3"><!-- widgets column center -->
-                
-                   
-                    
-                        <ul class="list-unstyled clear-margins"><!-- widgets -->
-                        
-                          <li class="widget-container widget_recent_news"><!-- widgets list -->
-                    
-                                <h1 class="title-widget">Social</h1>
-                                
-                               
-                                
-                                <div class="social-icons">
-                                
-                                  <ul class="nomargin">
-                                    
-                <a href="https://www.facebook.com/stayhappi.in/" target="_blank"><i class="fa fa-facebook-square fa-3x social-fb" id="social"></i></a>
-              <a href="https://twitter.com/SGunaushdhi" target="_blank"><i class="fa fa-twitter-square fa-3x social-tw" id="social"></i></a>
-
-             <!--  <a href="https://plus.google.com/+Bootsnipp-page"><i class="fa fa-google-plus-square fa-3x social-gp" id="social"></i></a>
-              <a href="mailto:bootsnipp@gmail.com"><i class="fa fa-envelope-square fa-3x social-em" id="social"></i></a>
-                                     -->
-                                    </ul>
-                                </div>
-                        </li>
-                          </ul>
-                       </div>
-                </div>
-</div>
-</footer>
-<!--header-->
-
-<div class="footer-bottom">
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-
-        <div class="copyright">
-
-© 2018 stayhappi.in All rights reserved
-        </div>
-
-      </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-
-        <div class="design">
-<!-- 
-           <a href="#">Franchisee </a> |  <a target="_blank" href="http://www.webenlance.com">Web Design & Development by Webenlance</a> -->
-
-        </div>
-
-      </div>
-
     </div>
-
   </div>
+  <!-- //about-top -->
+    <!-- footer -->
 
-</div>
-    <!-- //footer -->
-    <!-- //footer -->
+  <div ng-include="'views/footer.html'"></div>

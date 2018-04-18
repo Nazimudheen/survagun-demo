@@ -1,5 +1,6 @@
 angular.module('sbAdminApp')
   .controller('News', function($scope,$position,$http,$state,$timeout, BASE_URL) {
+$scope.menuItems ='News';
 
   
 $http.get(BASE_URL+"/newsget").then(function(response) {

@@ -1,7 +1,8 @@
 angular.module('sbAdminApp')
   .controller('store', function($scope,$position,$http,$state,$timeout,BASE_URL) {
 
-  // console.log(BASE_URL);
+$scope.menuItems ='contact';
+
 $http.get(BASE_URL+"/storeget").then(function(response) {
       $scope.content = response.data;
 

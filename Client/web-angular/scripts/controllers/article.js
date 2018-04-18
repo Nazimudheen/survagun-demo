@@ -1,7 +1,9 @@
 angular.module('sbAdminApp')
   .controller('article', function($scope,$position,$http,$state,$timeout,$sce,BASE_URL) {
 
-  console.log(BASE_URL);
+$scope.menuItems ='article';
+
+
 $http.get(BASE_URL+"/articleget").then(function(response) {
       $scope.content = response.data;
 

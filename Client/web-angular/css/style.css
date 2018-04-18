@@ -54,7 +54,7 @@ height: 50px;
 }
 .navbar-nav > li {
     text-align: center;
-	width:14%;
+	width:12%;
 }
 div#navbar {
     padding: 0px ;
@@ -538,7 +538,7 @@ a.join-wthree:hover {
     font-weight: 500;
 }*/
 
-.heading-agileinfo-copy span:after {
+/*.heading-agileinfo-copy span:after {
     content: '';
     background: #a8d1e4;
     height: 2px;
@@ -546,8 +546,9 @@ a.join-wthree:hover {
     position: absolute;
     top: 132%;
     right: 47%;
-}
-
+}*/
+.hover_intd:hover{background: #dcdcdc;   -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 4s;}
 .heading-agileinfo span:after {
     content: '';
     background: #a8d1e4;
@@ -3255,10 +3256,10 @@ font-family: 'Roboto';    margin-top: 0;
     margin-right: 0;
     margin-bottom: 25px;
     margin-left: 0;
-    padding-left: 28px;
-}
+/*    padding-left: 28px;
+*/}
 
-.title-widget::before {
+/*.title-widget::before {
     background-color: #db7f2e;
     content: "";
     height: 22px;
@@ -3267,7 +3268,7 @@ font-family: 'Roboto';    margin-top: 0;
     top: -2px;
     width: 5px;
 }
-
+*/
 
 
 .widget_nav_menu ul {
@@ -3289,7 +3290,7 @@ font-family: 'Roboto';    margin-top: 0;
 .widget_nav_menu ul li {
     font-size: 13px;
     font-weight: 100;
-    line-height: 13px;
+    line-height: 10px;
     position: relative;
 /*    text-transform: uppercase;
 */    border-bottom: 1px solid rgba(0, 0, 0, 0.05);

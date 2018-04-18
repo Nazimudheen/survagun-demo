@@ -80,25 +80,76 @@ angular
           }
         }
       })
-      .state('aboutus',{
+    
+    .state('aboutus',{
+        url:'/about-us',
+    controller: 'about',
         templateUrl:'views/about.html',
-        url:'/about-us'
-    })
-
-      .state('product',{
-        templateUrl:'views/product.html',
-        url:'/product'
-    })
-   
-
-      .state('quality',{
-        templateUrl:'views/quality.html',
-        url:'/quality'
-    })
-      .state('partner-with-us',{
-          templateUrl:'views/partner-with-us.html',
-          url:'/partner-with-us'
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:['scripts/controllers/about.js'                  
+                    ]})
+          }
+        }
       })
+
+
+
+
+ .state('product',{
+        url:'/product',
+    controller: 'products',
+        templateUrl:'views/product.html',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:['scripts/controllers/product.js'                  
+                    ]})
+          }
+        }
+      })
+
+    
+     
+ .state('quality',{
+        url:'/quality',
+    controller: 'quality',
+        templateUrl:'views/quality.html',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:['scripts/controllers/qulity.js'                  
+                    ]})
+          }
+        }
+      })
+
+
+
+
+
+ .state('partner-with-us',{
+        url:'/partner-with-us',
+    controller: 'partner',
+        templateUrl:'views/partner-with-us.html',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:['scripts/controllers/partner.js'                  
+                    ]})
+          }
+        }
+      })
+
+
+
+
+
       .state('news',{
         url:'/news',
     controller: 'News',
@@ -117,6 +168,8 @@ angular
       .state('article',{
        controller: 'article',
         templateUrl:'views/article.html',
+                url:'/article',
+
         resolve: {
           loadMyFiles:function($ocLazyLoad) {
             return $ocLazyLoad.load({
@@ -241,6 +294,4 @@ angular.module('sbAdminApp')
             return "";
         };
     }
-]);
-
- 
+])
