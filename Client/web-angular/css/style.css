@@ -3887,8 +3887,15 @@ a.join-wthree {
 	.mail-grid1, .agents, div#about, .banner-dott, .customer, .faq, .portfolio-agileinfo {
 		padding: 40px 0;
 	}
-	.about-3 {
+	/*.about-3 {
     padding: 0em 0;
+}*/
+.capsuls {
+    display: block;
+    background: #ffffff;
+    /* margin: 50px; */
+    margin: 25px 0px;
+    /* padding: 13px 0px; */
 }
 .about1 h5 {
     font-size: 18px;
