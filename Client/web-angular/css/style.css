@@ -1402,6 +1402,9 @@ h3.agileits-icons-title {
 	}
 }
 @media (max-width:768px){
+
+.heading-agileinfo-deatils-heading{    font-size: 20px !important;}
+.details-banner p{font-size: 17px !important; line-height: 21px;}
     .contact-logo img{ margin: 0px auto; }
     .w3-banner-head-info{    margin-top: 0px;}
     .contact-form div{ margin: 0px auto; }
