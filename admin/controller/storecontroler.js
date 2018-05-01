@@ -48,7 +48,21 @@ storeCtrl.list_all_ = function(req, res) {
 
 
 
+storeCtrl.list_Map_one = function(req, res) {
+ 
 
+var limit = 1;
+
+ Store.find({})
+            .limit(limit)
+            .exec(function(err,wins){
+
+    res.status(200).send(wins);
+
+
+ });
+
+};
 
 
 

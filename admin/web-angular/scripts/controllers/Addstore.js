@@ -1,10 +1,48 @@
-angular.module('sbAdminApp')
+angular.module('sbAdminApp', ['vsGoogleAutocomplete'])
   .controller('Addstore', function($scope,$position,$http,$timeout, BASE_URL) {
 
+ $scope.result1 = '';
+    $scope.options1 = null;
+    $scope.details1 = '';
+
+
+
+ $scope.location ={}
+$scope.streetNumber = {
+    name: '',
+    place: '',
+    components: {
+      placeId: '',
+      streetNumber: '', 
+      street: '',
+      city: '',
+      state: '',
+      countryCode: '',
+      country: '',
+      postCode: '',
+      district: '',
+      location: {
+        lat: '',
+        long: ''
+      }
+    }
+  };
+
+ $scope.myVar = false;
+    $scope.toggle = function() {
+        $scope.myVar = !$scope.myVar;
+    };
+
+ $scope.setSelected = function(selected) {
+    $scope.description = selected;
+  }
 
   $scope.form = {};
 
       $scope.save = function() {
+$scope.latitude = $scope.streetNumber.components.location.lat;
+
+$scope.longttude = $scope.streetNumber.components.location.long;
 
             $scope.submitted = true;
 
@@ -13,15 +51,17 @@ if ($scope.Image) {
 	payload.append('file', $scope.Image);
 
      payload.append("Image",$scope.Image.name);
+   payload.append("storename",$scope.storename);
 
-   payload.append("location",$scope.location);
-
+   payload.append("location",$scope.streetNumber.name);
+   payload.append("latitude",$scope.latitude);
+payload.append("longttude",$scope.longttude);
 
     payload.append("email", $scope.email);
         payload.append("phone", $scope.phone);
 
 
-        payload.append("address", $scope.description);
+        payload.append("address", $scope.streetNumber.components.city);
         payload.append("re_address",  CKEDITOR.instances['editor1'].getData());
 
 

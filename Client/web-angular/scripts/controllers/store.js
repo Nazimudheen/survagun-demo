@@ -1,7 +1,43 @@
-angular.module('sbAdminApp')
+angular.module('sbAdminApp',['ngMap','ui.filters'],)
   .controller('store', function($scope,$position,$http,$state,$timeout,BASE_URL) {
 
 $scope.menuItems ='contact';
+
+
+$scope.ngShowhide = false;
+            $scope.ngShowhideFun = function(flag) {
+                if (flag) {
+                    $scope.ngShowhide = false;
+                } else {
+                    $scope.ngShowhide = true;
+                }
+            };
+
+
+
+ $scope.myVar = false;
+    $scope.toggle = function() {
+        $scope.myVar = !$scope.myVar;
+    };
+
+ $scope.select = function(selected) {
+
+    $scope.paginate1 = selected;
+     $scope.myVar = false;
+
+  }
+
+$scope.MapChange = function(data){
+
+var lat = data.latitude;
+var lon = data.longttude;
+
+$scope.latitude_Map = lat;
+$scope.longttude_Map = lon;
+// console.log($scope.latitude_Map);
+// console.log($scope.longttude_Map);
+}
+
 
 $http.get(BASE_URL+"/storeget").then(function(response) {
       $scope.content = response.data;
@@ -9,7 +45,7 @@ $http.get(BASE_URL+"/storeget").then(function(response) {
 
 $scope.totalItems = $scope.content.length;
   $scope.currentPage = 1;
-  $scope.numPerPage = 6;
+  // $scope.numPerPage = 3;
   $scope.paginate = function(value) {
     var begin, end, index;
     begin = ($scope.currentPage - 1) * $scope.numPerPage;
@@ -20,8 +56,20 @@ $scope.totalItems = $scope.content.length;
              
   });
 
+$http.get(BASE_URL+"/list_Map_one").then(function(response) {
+      var cont_Map = response.data;
+for(var i = 0; i < cont_Map.length; i++){
+      $scope.latitude_Map = cont_Map[i].latitude;
 
- 
+   $scope.longttude_Map =   cont_Map[i].longttude;
+
+}
+  });
+
+$http.get(BASE_URL+"/storeget").then(function(response) {
+$scope.contentMap = response.data;
+      });
+
 $scope.edit = function(id,image,heading,subheading,description) {
 
 
@@ -168,17 +216,6 @@ $scope.save1 = function() {
 
             });
           };
-
-
-
         }
 
-
-
-
-
-
-
-
-
-  });
+});

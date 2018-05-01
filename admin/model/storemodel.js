@@ -27,7 +27,17 @@ var StoreSchema = new Schema({
    re_address: {
     type: String,
     Required: 'Kindly enter Reginel Office Address'
+  },latitude: {
+    type: String,
+    Required: 'Kindly enter Address'
+  },longttude: {
+    type: String,
+    Required: 'Kindly enter Address'
+  },storename: {
+    type: String,
+    Required: 'Kindly enter Address'
   }
+  
 });
 
 module.exports = mongoose.model('Stores', StoreSchema);

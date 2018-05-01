@@ -1,4 +1,4 @@
-    <script>
+  <script>
             CKEDITOR.replace( 'editor1' );
         </script>
 <div class="row" ng-controller="Addstore">
@@ -35,13 +35,52 @@
 
 
                             </div>  
-                                <label>Location (Google API Link)</label>
-                                <input class="form-control" placeholder="Location" type="url" name="location" ng-model="location" pattern="https?://.+" required>
 
-<span style="color:red" ng-show="myForm.location.$dirty && myForm.location.$invalid">
-<span ng-show="myForm.location.$error.required">Location is required.</span>
+<div class=" form-group col-lg-6 col-sm-12">
+                                <label>Store Name</label>
+                                <input type="text" ng-model="storename" name="storename"  required class="form-control">
+
+<span style="color:red" ng-show="myForm.storename.$dirty && myForm.storename.$invalid">
+<span ng-show="myForm.storename.$error.required">Store Name is required</span>
+
+                            </div>  
+
+<div class="form-group col-sm-12">
+
+
+
+                                <label>Location (Google API Link)</label>
+ <input vs-google-autocomplete
+                 vs-autocomplete-validator
+          
+                 ng-model="streetNumber.name"
+                 vs-place="streetNumber.place" 
+                 vs-place-id="streetNumber.components.placeId"
+                 vs-street-number="streetNumber.components.streetNumber" 
+                 vs-street="streetNumber.components.street"
+                 vs-city="streetNumber.components.city"
+                 vs-state="streetNumber.components.state"
+                 vs-country-short="streetNumber.components.countryCode"
+                 vs-country="streetNumber.components.country"
+                 vs-post-code="address.components.postCode"
+                 vs-district="address.components.district"
+                 vs-latitude="streetNumber.components.location.lat"
+                 vs-longitude="streetNumber.components.location.long"
+                 
+                 type="text" 
+                 name="streetNumber"
+                 id="streetNumber"
+                 class="form-control" 
+                 placeholder="Enter full address (street number, street, ...)">
+<input type="hidden" name="streetNumber.components.location.long" ng-model="streetNumber.components.location.lat" >
+
+<input type="hidden" name="streetNumber.components.location.long" ng-model="streetNumber.components.location.long" >
+
+<span style="color:red" ng-show="myForm.streetNumber.name.$dirty && myForm.streetNumber.name.$invalid"></span>
+<span ng-show="myForm.streetNumber.name.$error.required">Location is required.</span>
 
                             </div>
+</div>
                             <div class="form-group col-lg-6 col-sm-12">
                                 <label>Email</label>
                                 <input class="form-control" placeholder="Emailng" name="email" ng-model="email" required>
@@ -55,35 +94,39 @@
                                 <label>Phone Number</label>
                                 <input class="form-control" placeholder="Phone Number" name="phone" ng-model="phone" required>
 
-<span style="color:red" ng-show="(form.email.$dirty || submitted) && form.email.$error.required">
+<span style="color:red" ng-show="myForm.phone.$dirty && myForm.phone.$invalid">
 <span ng-show="myForm.phone.$error.required">Phone is required.</span>
 
 
                             </div>
                         
-                            <div class="form-group">
+                            <div class="form-group form-group col-lg-6 col-sm-12">
                                 <label>City</label>
 
 
-              <input type="text" ng-model="description" name="description" class="form-control" required>                  
+<input ng-model="streetNumber.components.city" name ="streetNumber.components.city" type="text" class="form-control" ng-keyup="toggle()" readonly/>
 
 
-    <span style="color:red" ng-show="(form.description.$dirty || submitted) && form.description.$error.required">
-<span ng-show="myForm.description.$error.required">Address is required.</span>
+
+   <span style="color:red" ng-show="myForm.description.$dirty && myForm.address.$invalid">
+<span ng-show="myForm.description.$error.required">City is required.</span>
                             </div>
                            
-                            <div class="form-group">
+                            <div class="form-group form-group col-lg-12 col-sm-12" style="margin: 50px 0px 0px 1px;">
                                 <label> Office Address</label>
-        <textarea  name="editor1" ng-model="re_address"></textarea>
+
+        <textarea name="editor1"  ng-model="re_address" >                                                                  
+</textarea>
 
 
        <span style="color:red" ng-show="(form.r_description.$dirty || submitted) && form.r_description.$error.required">
 <span ng-show="myForm.r_description.$error.required">Regional Office Address is required.</span>
                             </div>
+                            <div class="form-group form-group col-lg-6 col-sm-12">
 
                           
                             <button   type="submit"  class="btn btn-default">Submit</button>
-
+</div>
                         </form>
 
                     </div>
@@ -99,3 +142,51 @@
     </div>
     <!-- /.col-lg-12 -->
 </div>
+
+
+<!-- <div ng-class="{'form-group':true, 'has-error':addrForm.place.$dirty && addrForm.place.$invalid}">
+          <label for="place" class="control-label">Place</label>
+          <input vs-google-autocomplete
+                 vs-autocomplete-validator
+                 
+                 ng-model="place" 
+                 type="text"
+                 name="place"
+                 id="place"
+                 class="form-control" 
+                 placeholder="Enter any address">
+          <span class="help-block"><b><u>Valid</u>: </b>{{addrForm.place.$valid}}</span>
+          <span class="help-block"><b><u>NgModelController.$error</u>: </b>{{addrForm.place.$error}}</span>
+          <span class="help-block"><b><u>NgModelController.vsAutocompleteErorr</u>: </b>{{addrForm.place.vsAutocompleteErorr}}</span>
+          <span class="help-block"><b>Model: </b>{{place}}</span>
+        </div> -->
+        
+        <!-- 
+        * Example: vs-autocomplete-validator="vs-street-address"
+        * Info: checks if place is full street address (street number, street, ...)
+        -->
+<!--         <div ng-class="{'form-group':true, 'has-error':addrForm.streetNumber.$dirty && addrForm.streetNumber.$invalid}">
+ -->          
+          <!-- validation info -->
+          <!-- <span class="help-block"><b><u>Valid</u>: </b>{{addrForm.streetNumber.$valid}}</span>
+          <span class="help-block"><b><u>NgModelController.$error</u>: </b>{{addrForm.streetNumber.$error}}</span> -->
+<!--           <span class="help-block"><b><u>NgModelController.vsAutocompleteErorr</u>: </b>{{addrForm.streetNumber.vsAutocompleteErorr}}</span>
+ -->          
+          <!-- model -->
+          <!-- <span class="help-block"><b>Model: </b>{{streetNumber.name}}</span>
+          <span class="help-block"><b>Place id: </b>{{streetNumber.components.placeId}}</span>
+          <span class="help-block"><b>Street number: </b>{{streetNumber.components.streetNumber}}</span>
+          <span class="help-block"><b>Street: </b>{{streetNumber.components.street}}</span>
+          <span class="help-block"><b>City: </b>{{streetNumber.components.city}}</span>
+          <span class="help-block"><b>State: </b>{{streetNumber.components.state}}</span>
+          <span class="help-block"><b>Country code: </b>{{streetNumber.components.countryCode}}</span>
+          <span class="help-block"><b>Country: </b>{{streetNumber.components.country}}</span>
+          <span class="help-block"><b>Postcode: </b>{{address.components.postCode}}</span>
+          <span class="help-block"><b>District: </b>{{address.components.district}}</span>
+          <span class="help-block"><b>Latitude: </b>{{streetNumber.components.location.lat}}</span>
+          <span class="help-block"><b>Longitude: </b>{{streetNumber.components.location.long}}</span>
+          
+          <pre class="help-block"><b>Place: </b>{{streetNumber | json}}</pre>
+        </div> -->
+        
+      </form>

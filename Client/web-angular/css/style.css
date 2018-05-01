@@ -1402,7 +1402,8 @@ h3.agileits-icons-title {
 	}
 }
 @media (max-width:768px){
-
+   .map_img {width: 98px;
+    height: 77px;}
 .heading-agileinfo-deatils-heading{    font-size: 20px !important;}
 .details-banner p{font-size: 17px !important; line-height: 21px;}
     .contact-logo img{ margin: 0px auto; }
@@ -3601,9 +3602,15 @@ font-size: 25px;
 	.banner-dott1 {
 		min-height: 485px;
 	}
+   .map_img {width: 70px !important;
+    height: 57px !important;}
 }
 @media screen and (max-width: 991px){
-
+  .media p{    font-size: 8px;
+    line-height: 15px;}
+.media-heading{font-size: 14px;}
+    .map_img {width: 70px;
+    height: 57px;}
     .op{width: 100%;     height: auto}
     .overlay{}
 	.navbar-nav>li {
@@ -3817,6 +3824,8 @@ h6.caption {
 	}
 }
 @media screen and (max-width: 768px){
+
+    .mapin{height: 250px !important;}
     .contact-logo {
 }
 
@@ -3992,6 +4001,11 @@ padding-right: 0px !important; }
 
 }
 @media screen and (max-width: 767px){
+
+    .map_img {
+    width: 56px !important;
+    height: 42px !important;
+}
 	.head-wl h1 a {
     font-size: 43px;
     padding: 5px 0px 0px;
@@ -4252,6 +4266,10 @@ nav.navbar.navbar-default.navbar-fixed-top {
 }
 }
 @media screen and (max-width: 600px){
+    .map_img {
+    width: 56px !important;
+    height: 42px !important;
+}
 	.text-center {
 		width: 100%;
 		float: none;

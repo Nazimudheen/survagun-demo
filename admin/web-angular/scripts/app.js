@@ -23,7 +23,7 @@ angular
     };
 
     var token = $window.localStorage.getItem("token");
-    console.log("here!");
+    // console.log("here!");
     console.log(token);
     $http({
         url: BASE_URL + '/getCurrentUser',
@@ -233,14 +233,14 @@ angular
           loadMyFile:function($ocLazyLoad) {
             return $ocLazyLoad.load({
               name:'sbAdminApp',
-              files:['scripts/controllers/Addstore.js']
+              files:['scripts/controllers/Addstore.js','scripts/controllers/ngAutocomplete.js']
             })
           }
         }
       })
 
 .state('dashboard.editstore',{
-   url:'/editstore/:index/:address/:re_address/:location/:phone/:email/:image',
+   url:'/editstore/:index/:address/:re_address/:location/:phone/:email/:image/:longttude/:storename/:latitude',
 
           controller:'editstore',                                                                                            
           templateUrl:'views/editstore.html',
@@ -454,3 +454,5 @@ angular
         };
     }
 ]);
+
+  

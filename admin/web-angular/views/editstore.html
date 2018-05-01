@@ -39,8 +39,49 @@
 
 
                             </div>  
+                                  <div class="form-group">
+
+<label>Store Name</label>
+                                <input type="text" ng-model="storename" name="storename"  required class="form-control">
+
+<span style="color:red" ng-show="myForm.storename.$dirty && myForm.storename.$invalid">
+<span ng-show="myForm.storename.$error.required">Store Name is required</span>
+</div>
+
+
+
+<span ng-show="myForm.storename.$error.required">Store Name is required</span>
+
                                 <label>Location (Google API Link)</label>
-                                <input class="form-control" type ="url" placeholder="Location" name="location" ng-model="location" pattern="https?://.+" required>
+                            <!--     <input class="form-control" type ="url" placeholder="Location" name="location" ng-model="location" pattern="https?://.+" required>
+ -->
+ <input vs-google-autocomplete
+                 vs-autocomplete-validator
+          
+                 ng-model="streetNumber.name"
+                 vs-place="streetNumber.place" 
+                 vs-place-id="streetNumber.components.placeId"
+                 vs-street-number="streetNumber.components.streetNumber" 
+                 vs-street="streetNumber.components.street"
+                 vs-city="streetNumber.components.city"
+                 vs-state="streetNumber.components.state"
+                 vs-country-short="streetNumber.components.countryCode"
+                 vs-country="streetNumber.components.country"
+                 vs-post-code="address.components.postCode"
+                 vs-district="address.components.district"
+                 vs-latitude="streetNumber.components.location.lat"
+                 vs-longitude="streetNumber.components.location.long"
+                 
+                 type="text" 
+                 name="streetNumber"
+                 id="streetNumber"
+                 class="form-control" 
+                 placeholder="Enter full address (street number, street, ...)" required  ng-init="streetNumber.name=location">
+
+
+<input type="hidden" name="streetNumber.components.location.lat" ng-model="streetNumber.components.location.lat" ng-init="streetNumber.components.location.lat=latitude">
+
+<input type="hidden" name="streetNumber.components.location.long" ng-model="streetNumber.components.location.long" ng-init="streetNumber.components.location.long=longttude">
 
 <span style="color:red" ng-show="myForm.location.$dirty && myForm.location.$invalid">
 <span ng-show="myForm.location.$error.required">Location is required.</span>
@@ -62,18 +103,22 @@
 <span style="color:red" ng-show="myForm.phone.$dirty && myForm.phone.$invalid">
 <span ng-show="myForm.phone.$error.required">Phone is required.</span>
 
-
                             </div>
                         
-                            <div class="form-group">
+                               <div class="form-group col-lg-6 col-sm-12">
                                 <label>City</label>
-              <input type="text" ng-model="address" name="address" class="form-control" required>                  
-    <!-- <textarea id="txtEditor" class="form-control" rows="3" placeholder="Enter Description" ng-model="address" name="address">{{address}}</textarea> -->
-    <span style="color:red" ng-show="myForm.address.$dirty && myForm.address.$invalid">
-<span ng-show="myForm.address.$error.required">Address is required.</span>
+
+
+<input ng-model="streetNumber.components.city" name ="streetNumber.components.city" type="text" class="form-control" ng-keyup="toggle()" readonly  ng-init="streetNumber.components.city=address"/>
+ 
+
+
+
+   <span style="color:red" ng-show="myForm.description.$dirty && myForm.address.$invalid">
+<span ng-show="myForm.description.$error.required">City is required.</span>
                             </div>
-                           
-                            <div class="form-group">
+
+                            <div class="form-group col-sm-12" style="margin: 50px 0px 0px 1px;">
                                 <label> Office Address</label>
     <textarea  name="editor1" ng-model="re_address"></textarea>
 

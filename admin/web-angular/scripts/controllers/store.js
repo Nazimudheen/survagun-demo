@@ -1,6 +1,14 @@
-angular.module('sbAdminApp')
+
+
+
+angular.module('sbAdminApp',['ngMap'])
   .controller('Store', function($scope,$position,$http,$state,$timeout,$sce, BASE_URL) {
 
+
+var latitude = angular.element('#latitude').val();
+console.log(latitude);
+$scope.heading = 90;
+    $scope.pitch = 0
 
 $http.get(BASE_URL+"/storeget").then(function(response) {
       $scope.content = response.data;
@@ -70,11 +78,9 @@ $http({
 
 
       }
-$scope.edit = function(id,re_address,address,location,phone,email,image) {
+$scope.edit = function(id,re_address,address,location,phone,email,image,longttude,storename,latitude) {
 
 $scope.id =id;
-console.log(address)
-console.log(image);
 
 $scope.re_address = re_address;
 
@@ -86,15 +92,29 @@ $scope.location = location;
 $scope.phone = phone;
 $scope.email = email;
 $scope.image = image;
-  $state.go('dashboard.editstore', {'index': $scope.id,
+
+$scope.longttude = longttude;
+$scope.storename = storename;
+$scope.latitude = latitude;
+  $state.go('dashboard.editstore', {
+    'index': $scope.id,
    're_address': $scope.re_address,
     'address':$scope.address,
     'location': $scope.location,
     'phone': $scope.phone ,
-    'email' : $scope.email,'image' :$scope.image})
+    'email' : $scope.email,
+    'image' :$scope.image,
+    'longttude':$scope.longttude,
+    'storename':$scope.storename,
+    'latitude':$scope.latitude})
  	}
 
 
 
 
-  });
+  }).directive('map', function(){
+    return {
+        priority: 99,
+        terminal: true,
+    };
+})

@@ -1,5 +1,86 @@
-angular.module('sbAdminApp')
+angular.module('sbAdminApp',['vsGoogleAutocomplete'])
   .controller('editstore', function($scope,$position,$http,$state,$stateParams,$timeout, BASE_URL) {
+
+
+
+
+
+
+
+ $scope.result1 = '';
+    $scope.options1 = null;
+    $scope.details1 = '';
+
+
+
+ $scope.myVar = false;
+    $scope.toggle = function() {
+        $scope.myVar = !$scope.myVar;
+    };
+
+ $scope.setSelected = function(selected) {
+    $scope.address = selected;
+  }
+
+
+ $scope.location ={}
+$scope.streetNumber = {
+    name: '',
+    place: '',
+    components: {
+      placeId: '',
+      streetNumber: '', 
+      street: '',
+      city: '',
+      state: '',
+      countryCode: '',
+      country: '',
+      postCode: '',
+      district: '',
+      location: {
+        lat: '',
+        long: ''
+      }
+    }
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -20,6 +101,9 @@ $scope.phone = $stateParams.phone;
   $scope.re_address = $stateParams.re_address;
 
 
+ $scope.latitude = $stateParams.latitude;
+  $scope.longttude = $stateParams.longttude;
+  $scope.storename = $stateParams.storename;
 
 
 
@@ -27,7 +111,14 @@ $scope.phone = $stateParams.phone;
 
 $scope.save = function() {
 
+
+$scope.latitude = $scope.streetNumber.components.location.lat;
+
+$scope.longttude = $scope.streetNumber.components.location.long;
          var payload = new FormData();
+
+
+
           if($scope.Image) // if a is negative,undefined,null,empty value then...
                {
            payload.append("Image",$scope.Image.name);
@@ -36,11 +127,14 @@ $scope.save = function() {
 
           }
          payload.append("Index",$scope.index);
-
+ payload.append("location",$scope.streetNumber.name);
+   payload.append("latitude",$scope.latitude);
+payload.append("longttude",$scope.longttude);
+   payload.append("location",$scope.streetNumber.name);
 
          payload.append("email",$scope.email);
          payload.append("phone", $scope.phone);
-         payload.append("address", $scope.address);
+         payload.append("address", $scope.streetNumber.components.city);
 
          payload.append("re_address",  CKEDITOR.instances['editor1'].getData());
 

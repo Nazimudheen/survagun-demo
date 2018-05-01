@@ -20,6 +20,9 @@ module.exports = function(app) {
 
               app.post('/API/store', multipartMiddleware,store.apiPOST);
               app.get('/API/storeget',store.list_all_); 
+              app.get('/API/list_Map_one',store.list_Map_one); 
+
+              
               app.delete('/API/storeDelete', multipartMiddleware,store.storeDelete);
               app.put('/API/storeedit',multipartMiddleware,store.store_edit);
 
