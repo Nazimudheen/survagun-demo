@@ -5,10 +5,7 @@ angular.module('sbAdminApp',['ngMap'])
   .controller('Store', function($scope,$position,$http,$state,$timeout,$sce, BASE_URL) {
 
 
-var latitude = angular.element('#latitude').val();
-console.log(latitude);
-$scope.heading = 90;
-    $scope.pitch = 0
+
 
 $http.get(BASE_URL+"/storeget").then(function(response) {
       $scope.content = response.data;
