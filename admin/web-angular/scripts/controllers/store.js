@@ -24,6 +24,7 @@ $http.get(BASE_URL+"/storeget").then(function(response) {
              
   });
 
+var myLatlng = new google.maps.LatLng(parseFloat(trader.geo.lat),parseFloat(trader.geo.lon));
 
       $scope.delete = function(id,index) {
 
