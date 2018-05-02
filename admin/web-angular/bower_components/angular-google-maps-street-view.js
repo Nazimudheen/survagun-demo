@@ -674,4 +674,4 @@ StreetViewPanorama Directive to care of basic initialization of StreetViewPanora
   ]);
 
 }).call(this);
-}( window, angular, _));
+}( window, angular));
