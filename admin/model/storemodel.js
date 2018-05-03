@@ -39,6 +39,5 @@ var StoreSchema = new Schema({
     Required: 'Kindly enter Reginel Office Address'
   }
 });
-
 module.exports = mongoose.model('Stores', StoreSchema);
 
