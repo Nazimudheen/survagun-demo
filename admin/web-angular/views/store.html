@@ -1,4 +1,4 @@
-<div class="row" ng-controller="Store as vm">
+<div class="row" ng-controller="Store">
     <div class="col-lg-6">
         <h1 class="page-header">STORE MANGMENT</h1>
     </div>
@@ -63,7 +63,7 @@
                         <tbody>
                             <tr class="odd gradeX" ng-repeat="x in content | filter:paginate  | filter : paginate1">
                                                                 <td><img src="Local_FS/store/{{x.Image}}" width="200" height="130"></td>
-<td>{{x.storename}}</td><td>{{vm.x.latitude}}</td>
+<td>{{x.storename}}</td><td>{{x.latitude}}</td>
 
                                 <td>{{x.email}}</td>
                                 <td>{{x.phone}}</td>

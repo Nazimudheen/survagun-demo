@@ -7,7 +7,7 @@ angular.module('sbAdminApp',['ngMap'])
  var vm = this;
     
     NgMap.getMap().then(function (map) {
-            vm.map = map;
+            x.map = map;
     });
 
     
@@ -23,7 +23,7 @@ $scope.$on('mapInitialized', function(event, map) {
     });
 
 if (navigator.geolocation) {
-  
+
   navigator.geolocation.getCurrentPosition(function(position){
     $scope.$apply(function(){
       $scope.position = position;
