@@ -1,4 +1,4 @@
-<div class="row" ng-controller="Store">
+<div class="row" ng-controller="Store as vm">
     <div class="col-lg-6">
         <h1 class="page-header">STORE MANGMENT</h1>
     </div>
@@ -70,7 +70,7 @@
                                 <td>{{x.address}}</td>
                                         <td>  <p ng-bind-html="x.re_address"></p></td>
                                 <td>  <ng-map center="">
- <ng-map  center="{{x.latitude}},{{x.longttude}}" >
+<!--  <ng-map  center="{{x.latitude}},{{x.longttude}}" >
     <marker position="{{x.latitude}},{{x.longttude}}"></marker>
     <street-view-panorama
       click-to-go="false"
@@ -82,7 +82,23 @@
       enable-close-button="true"
       visible="true">
     </street-view-panorama>
-  </ng-map>
+  </ng-map> -->
+
+<ng-map zoom="7" center="48.8588377,2.2775177" map-type-id="ROADMAP" street-view-control-options="{position: 'LEFT_CENTER'}">
+        
+        <shape name="rectangle" 
+          editable="true" on-bounds_changed="vm.rectShapeResized()" 
+             bounds="[ [48.190, 2.649], [48.899, 3.443] ]">
+          </shape>
+    </ng-map>
+
+
+
+
+
+
+
+
 <div id="streetview" style="width: 200px; height: 90px"></div>
 
 
