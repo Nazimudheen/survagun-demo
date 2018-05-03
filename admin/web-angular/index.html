@@ -46,7 +46,26 @@
 <script src="bower_components/vs-google-autocomplete.js"></script>
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf1i7eOy4mxpxvlpbsKfvv28BEGTUasys&libraries=places"></script>
+<script>
+    function initMap() {
+        var myLatLng = { lat: @ViewBag.Lat, lng: @ViewBag.Lng};
 
+        // Create a map object and specify the DOM element for display.
+        var map = new window.google.maps.Map(document.getElementById('map'),
+        {
+            center: myLatLng,
+            scrollwheel: false,
+            zoom: 16
+        });
+
+        // Create a marker and set its position.
+        var marker = new window.google.maps.Marker({
+            map: map,
+            position: myLatLng
+            //title: "Blue"
+        });
+    }
+</script>
 <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&libraries=places"></script> -->
 
 <!-- <script src="https://maps.google.com/maps/api/js?v=2
