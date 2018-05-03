@@ -2,9 +2,20 @@
 
 
 angular.module('sbAdminApp',['ngMap'])
-  .controller('Store', function($scope,$position,$http,$state,$timeout,$sce, BASE_URL) {
+  .controller('Store', function($scope,$position,$http,$state,$timeout,$sce, BASE_URL,NgMap) {
 
+ var vm = this;
+    
+    NgMap.getMap().then(function (map) {
+            vm.map = map;
+    });
 
+    
+
+    vm.rectShapeResized = function (e) {
+        var rect = vm.map.shapes[0]; //get the first instance of shape
+        console.log(rect.getBounds().toString());  //print a new bounds
+    };
 
 
 $http.get(BASE_URL+"/storeget").then(function(response) {
