@@ -84,17 +84,18 @@
     </street-view-panorama>
   </ng-map> -->
 
-<ng-map zoom="50" center="[{{x.latitude }}, {{x.longttude}}]" map-type-id="ROADMAP" street-view-control-options="{position: 'LEFT_CENTER'}">
+<!-- <ng-map zoom="50" center="[{{x.latitude }}, {{x.longttude}}]" map-type-id="ROADMAP" street-view-control-options="{position: 'LEFT_CENTER'}">
         
 
         <marker position="[{{x.latitude}}, {{x.longttude}}]" draggable="true"  ></marker>
        
     </ng-map>
+ -->
 
+<ng-map  center="{{x.latitude}},{{x.longttude}}" >
+    <marker position="{{x.latitude}},{{x.longttude}}"></marker>
 
-
-
-
+</ng-map>
 
 
 
