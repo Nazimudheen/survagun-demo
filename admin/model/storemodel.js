@@ -37,7 +37,6 @@ var StoreSchema = new Schema({
     type: String,
     Required: 'Kindly enter Address'
   }
-  
 });
 
 module.exports = mongoose.model('Stores', StoreSchema);
