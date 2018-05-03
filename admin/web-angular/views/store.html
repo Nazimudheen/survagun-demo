@@ -63,7 +63,8 @@
                         <tbody>
                             <tr class="odd gradeX" ng-repeat="x in content | filter:paginate  | filter : paginate1">
                                                                 <td><img src="Local_FS/store/{{x.Image}}" width="200" height="130"></td>
-<td>{{x.storename}}</td>
+<td>{{x.storename}}</td><td>{{x.latitude}}</td>
+
                                 <td>{{x.email}}</td>
                                 <td>{{x.phone}}</td>
 
@@ -91,7 +92,6 @@
        
     </ng-map>
  -->
-<p>{{x.latitude}}</p>
 <ng-map  center="{{x.latitude}},{{x.longttude}}" >
     <marker position="{{x.latitude}},{{x.longttude}}"></marker>
 
