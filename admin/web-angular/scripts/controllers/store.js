@@ -4,12 +4,7 @@
 angular.module('sbAdminApp',['ngMap'])
   .controller('Store', function($scope,$position,$http,$state,$timeout,$sce, BASE_URL) {
 
-$scope.bounds = new google.maps.LatLngBounds();
-for (var i = $scope.markers.length - 1; i >= 0; i--) {
-    $scope.bounds.extend(new google.maps.LatLng($scope.markers[i].coords.latitude, $scope.markers[i].coords.longitude));
-};    
-$scope.control.getGMap().fitBounds($scope.bounds);
-$scope.control.getGMap().setCenter($scope.bounds.getCenter());
+
 
 
 $http.get(BASE_URL+"/storeget").then(function(response) {
