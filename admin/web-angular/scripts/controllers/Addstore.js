@@ -44,6 +44,8 @@ $scope.latitude = $scope.streetNumber.components.location.lat;
 
 $scope.longttude = $scope.streetNumber.components.location.long;
 
+console.log($scope.longttude);
+console.log($scope.storename);
             $scope.submitted = true;
 
          var payload = new FormData();
@@ -51,11 +53,12 @@ if ($scope.Image) {
 	payload.append('file', $scope.Image);
 
      payload.append("Image",$scope.Image.name);
+      payload.append("latitude",$scope.latitude);
+payload.append("longttude",$scope.longttude);
    payload.append("storename",$scope.storename);
 
    payload.append("location",$scope.streetNumber.name);
-   payload.append("latitude",$scope.latitude);
-payload.append("longttude",$scope.longttude);
+  
 
     payload.append("email", $scope.email);
         payload.append("phone", $scope.phone);

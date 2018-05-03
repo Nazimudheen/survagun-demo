@@ -7,6 +7,16 @@ var StoreSchema = new Schema({
   Image: {
     type: String,
     Required: 'Kindly enter the  the Image'
+  },storename: {
+    type: String,
+    Required: 'Kindly enter Address'
+  },
+  latitude: {
+    type: String,
+    Required: 'Kindly enter latitude'
+  },longttude: {
+    type: String,
+    Required: 'Kindly enter longttude'
   },
   email: {
     type: String,
@@ -27,15 +37,6 @@ var StoreSchema = new Schema({
    re_address: {
     type: String,
     Required: 'Kindly enter Reginel Office Address'
-  },latitude: {
-    type: String,
-    Required: 'Kindly enter Address'
-  },longttude: {
-    type: String,
-    Required: 'Kindly enter Address'
-  },storename: {
-    type: String,
-    Required: 'Kindly enter Address'
   }
 });
 
