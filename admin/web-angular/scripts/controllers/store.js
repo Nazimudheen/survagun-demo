@@ -12,12 +12,15 @@ angular.module('sbAdminApp',['ngMap'])
 
     
 
-    vm.rectShapeResized = function (e) {
-        var rect = vm.map.shapes[0]; //get the first instance of shape
-        console.log(rect.getBounds().toString());  //print a new bounds
-    };
+    // vm.rectShapeResized = function (e) {
+    //     var rect = vm.map.shapes[0]; //get the first instance of shape
+    //     console.log(rect.getBounds().toString());  //print a new bounds
+    // };
 
-
+$scope.$on('mapInitialized', function(event, map) {
+      map.setOptions({
+      });
+    });
 $http.get(BASE_URL+"/storeget").then(function(response) {
       $scope.content = response.data;
 
