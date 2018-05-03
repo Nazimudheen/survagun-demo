@@ -72,9 +72,9 @@
                  id="streetNumber"
                  class="form-control" 
                  placeholder="Enter full address (street number, street, ...)">
-<input type="hidden" name="streetNumber.components.location.long" ng-model="streetNumber.components.location.lat" >
+<input type="text" name="streetNumber.components.location.long" ng-model="streetNumber.components.location.lat" >
 
-<input type="hidden" name="streetNumber.components.location.long" ng-model="streetNumber.components.location.long" >
+<input type="text" name="streetNumber.components.location.long" ng-model="streetNumber.components.location.long" >
 
 <span style="color:red" ng-show="myForm.streetNumber.name.$dirty && myForm.streetNumber.name.$invalid"></span>
 <span ng-show="myForm.streetNumber.name.$error.required">Location is required.</span>
