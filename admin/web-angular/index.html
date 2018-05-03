@@ -46,8 +46,25 @@
     
 <script src="bower_components/vs-google-autocomplete.js"></script>
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf1i7eOy4mxpxvlpbsKfvv28BEGTUasys&libraries=places"></script>
 
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf1i7eOy4mxpxvlpbsKfvv28BEGTUasys&libraries=places"></script>
+<script type="text/javascript">
+    function initAutocomplete() {
+    var lat = parseFloat(document.getElementById('lat').value);
+    var lng = parseFloat(document.getElementById('lng').value);
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+            lat: lat,
+            lng: lng
+        },
+        zoom: 13,
+        mapTypeId: 'roadmap'
+    });
+}
+    
+</script>
 <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&libraries=places"></script> -->
 
 <!-- <script src="https://maps.google.com/maps/api/js?v=2
