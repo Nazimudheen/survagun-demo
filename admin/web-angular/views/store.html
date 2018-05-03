@@ -94,7 +94,17 @@
  -->
 <ng-map  center="{{x.latitude}},{{x.longttude}}" >
     <marker position="{{x.latitude}},{{x.longttude}}"></marker>
-
+  <street-view-panorama
+      click-to-go="false"
+      disable-default-u-i="false"
+      disable-double-click-zoom="false"
+      position="x.address, x.address"
+      heading= "x.heading"
+      scrollwheel="false"
+      enable-close-button="true"
+      visible="true">
+    </street-view-panorama>
+  </ng-map>
 </ng-map>
 
 

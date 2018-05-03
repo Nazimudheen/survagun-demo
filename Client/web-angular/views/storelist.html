@@ -90,7 +90,6 @@
 .map_img{width:170px; height: 120px;}
 .mapin{width: 100%; height: 600px; margin: 80px 0px; display: block;}
              </style>
-             
               <div class="w3-banner-head-info slideshow-container" style="display: none;">
              <div class="" style="display: block;" >
 <img class="mySlides w3-animate-fading slid-img-custom" src="" style="" class="img-responsive">
@@ -231,7 +230,16 @@
          <ng-map class="mapin" center="{{latitude_Map}},{{longttude_Map}}" >
     <marker position="{{latitude_Map}},{{longttude_Map}}"></marker>
    
-    </street-view-panorama>
+  <!--   <street-view-panorama
+      click-to-go="false"
+      disable-default-u-i="false"
+      disable-double-click-zoom="false"
+      position="x.address, x.address"
+      heading= "x.heading"
+      scrollwheel="false"
+      enable-close-button="true"
+      visible="true">
+    </street-view-panorama> -->
   </ng-map>
 
     
