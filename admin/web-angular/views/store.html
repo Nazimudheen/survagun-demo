@@ -86,10 +86,9 @@
 
 <ng-map zoom="7" center="48.8588377,2.2775177" map-type-id="ROADMAP" street-view-control-options="{position: 'LEFT_CENTER'}">
         
-        <shape name="rectangle" 
-          editable="true" on-bounds_changed="vm.rectShapeResized()" 
-             bounds="[ [48.190, 2.649], [48.899, 3.443] ]">
-          </shape>
+
+        <marker position="{{x.latitude}},{{x.longttude}}" editable="true" on-bounds_changed="vm.rectShapeResized()" ></marker>
+       
     </ng-map>
 
 
