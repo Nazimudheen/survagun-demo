@@ -21,6 +21,16 @@ $scope.$on('mapInitialized', function(event, map) {
       map.setOptions({
       });
     });
+
+if (navigator.geolocation) {
+  
+  navigator.geolocation.getCurrentPosition(function(position){
+    $scope.$apply(function(){
+      $scope.position = position;
+    });
+  });
+}
+
 $http.get(BASE_URL+"/storeget").then(function(response) {
       $scope.content = response.data;
 
