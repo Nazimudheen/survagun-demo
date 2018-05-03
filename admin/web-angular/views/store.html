@@ -87,20 +87,7 @@
 <ng-map zoom="50" center="x.latitude,x.longttude" map-type-id="ROADMAP" street-view-control-options="{position: 'LEFT_CENTER'}">
         
 
-        <marker position="x.latitude,x.longttude" editable="true"  >
-          
-<street-view-panorama
-      click-to-go="false"
-      disable-default-u-i="false"
-      disable-double-click-zoom="false"
-      position="x.address, x.address"
-      heading= "x.heading"
-      scrollwheel="false"
-      enable-close-button="true"
-      visible="true">
-    </street-view-panorama>
-
-        </marker>
+        <marker position="x.latitude,x.longttude" editable="true" on-bounds_changed="vm.rectShapeResized()" ></marker>
        
     </ng-map>
 
