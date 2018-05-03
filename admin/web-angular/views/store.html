@@ -84,7 +84,7 @@
     </street-view-panorama>
   </ng-map> -->
 
-<ng-map zoom="7" center="48.8588377,2.2775177" map-type-id="ROADMAP" street-view-control-options="{position: 'LEFT_CENTER'}">
+<ng-map zoom="7" center="{{x.latitude}},{{x.longttude}}" map-type-id="ROADMAP" street-view-control-options="{position: 'LEFT_CENTER'}">
         
 
         <marker position="{{x.latitude}},{{x.longttude}}" editable="true" on-bounds_changed="vm.rectShapeResized()" ></marker>
