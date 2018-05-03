@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var StoreSchema = new Schema({
+var StoreShema = new Schema({
   Image: {
     type: String,
     Required: 'Kindly enter the  the Image'
