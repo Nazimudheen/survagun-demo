@@ -4,7 +4,7 @@ angular.module('sbAdminApp',['vsGoogleAutocomplete'])
 
 
 
-$scope.streetNumber = {};
+$scope.components = {};
 result1 = '';
     $scope.options1 = null;
     $scope.details1 = '';
