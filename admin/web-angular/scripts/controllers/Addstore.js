@@ -53,9 +53,9 @@ if ($scope.Image) {
 	payload.append('file', $scope.Image);
 
      payload.append("Image",$scope.Image.name);
-      payload.append("latitude",$scope.latitude);
-payload.append("longttude",$scope.longttude);
-   payload.append("storename",$scope.storename);
+      payload.append("latitude",$scope.latitude.toString());
+payload.append("longttude",$scope.longttude.toString());
+   payload.append("storename",$scope.storename.toString());
 
    payload.append("location",$scope.streetNumber.name);
   
