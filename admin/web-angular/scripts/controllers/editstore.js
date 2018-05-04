@@ -22,10 +22,8 @@ $scope.streetNumber = {
     }
   };
 
-
     $scope.options1 = null;
     $scope.details1 = '';
-
 
 
  $scope.myVar = false;
