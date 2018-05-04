@@ -3,6 +3,7 @@
 
 angular.module('sbAdminApp',['ngMap'])
   .controller('Store', function($scope,$position,$http,$state,$timeout,$sce, BASE_URL,NgMap) {
+$scope.streetNumber = {};
 
  var vm = this;
     
