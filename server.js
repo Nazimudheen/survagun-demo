@@ -1,7 +1,7 @@
   var express = require('express'),
   app = express(),
   passport = require('passport'),
-  port = process.env.PORT || 5000,
+  port = process.env.PORT || 3000,
   mongoose = require('mongoose'),
    News = require('./admin/model/newsmodel'),
   Store = require('./admin/model/storemodel'),
