@@ -2,26 +2,6 @@ angular.module('sbAdminApp',['vsGoogleAutocomplete'])
   .controller('editstore', function($scope,$position,$http,$state,$stateParams,$timeout, BASE_URL) {
 
 
-
-
-$scope.streetNumber.components = {city:""};
-result1 = '';
-    $scope.options1 = null;
-    $scope.details1 = '';
-
-
-
- $scope.myVar = false;
-    $scope.toggle = function() {
-        $scope.myVar = !$scope.myVar;
-    };
-
- $scope.setSelected = function(selected) {
-    $scope.address = selected;
-  }
-
-
- $scope.location ={}
 $scope.streetNumber = {
     name: '',
     place: '',
@@ -41,6 +21,25 @@ $scope.streetNumber = {
       }
     }
   };
+
+
+    $scope.options1 = null;
+    $scope.details1 = '';
+
+
+
+ $scope.myVar = false;
+    $scope.toggle = function() {
+        $scope.myVar = !$scope.myVar;
+    };
+
+ $scope.setSelected = function(selected) {
+    $scope.address = selected;
+  }
+
+
+ $scope.location ={}
+
 
 
 
