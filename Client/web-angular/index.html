@@ -49,22 +49,12 @@
       <script type="text/javascript" src="js/easing.js"></script>
       <script type="text/javascript">
          $(document).ready(function() {
-             /*
-                 var defaults = {
-                 containerID: 'toTop', // fading element id
-                 containerHoverID: 'toTopHover', // fading element hover id
-                 scrollSpeed: 1200,
-                 easingType: 'linear' 
-                 };
-             */
+          
                                  
              $().UItoTop({ easingType: 'easeOutQuart' });
                                  
              });
       </script>
-      <!-- //here ends scrolling icon -->
-      <!-- //for smooth scrolling -->
-      <!-- scrolling script -->
       <script type="text/javascript">
          jQuery(document).ready(function($) {
              $(".scroll").click(function(event){     
@@ -79,12 +69,13 @@
       <!-- //googlefonts -->
    </head>
    <body>
-    <main>
-    <h1 class="hidden-all">Quality Healthcare for All</h1>
-    <h2 class="hidden-all">Medicines are sold primarily as branded drugs in almost every therapeutic segment,
-at prices which are reasonable according to global standards, but still very high as
-per the Indian scenario ...</h2>
-    </main>
+      <main>
+         <h1 class="hidden-all">Quality Healthcare for All</h1>
+         <h2 class="hidden-all">Medicines are sold primarily as branded drugs in almost every therapeutic segment,
+            at prices which are reasonable according to global standards, but still very high as
+            per the Indian scenario ...
+         </h2>
+      </main>
       <div ng-app="sbAdminApp">
          <div ui-view  autoscroll="true"></div>
       </div>
