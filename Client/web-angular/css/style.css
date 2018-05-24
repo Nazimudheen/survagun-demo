@@ -4009,6 +4009,9 @@ padding-right: 0px !important; }
 }
 @media screen and (max-width: 767px){
 
+        .heading-agileinfo{margin: 4px !important;}
+
+
     .map_img {
     width: 56px !important;
     height: 42px !important;
@@ -4668,6 +4671,7 @@ font-size: 20px;
 }
 }
 @media screen and (max-width: 320px){
+    .heading-agileinfo{margin: 4px !important;}
 	.text-center h3 {
 		font-size: 30px;
 	}
@@ -4882,7 +4886,14 @@ nav.navbar.navbar-default.navbar-fixed-top{
   
     .contact-logo { margin: 0px auto; }
 
-
+.wthree-mid h1 {
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    padding-bottom: 0px;
+}
 
 }
 
