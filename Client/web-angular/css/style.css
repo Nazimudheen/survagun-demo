@@ -31,6 +31,9 @@ input[type="submit"],input[type="reset"],a{
 img{
 	width:100%;
 }
+.hidden-all {
+    display: none !important;
+  }
 .media{cursor: pointer;}
 
 .zs-bullet{display: none !important;}
