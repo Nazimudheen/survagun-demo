@@ -767,7 +767,14 @@ p.white-clrf {
 
 
 
-
+.wthree-mid h1 {
+    font-size: 34px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
 
 
 
