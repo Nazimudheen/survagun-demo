@@ -20,6 +20,7 @@
     "express": "^4.16.2",
     "express-mailer": "^0.3.1",
     "express-session": "^1.15.6",
+    "find-package-json": "^1.1.0",
     "fs-extra": "^5.0.0",
     "jsonwebtoken": "^8.2.0",
     "mongodb": "^3.0.4",
